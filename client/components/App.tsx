@@ -1,4 +1,8 @@
+import { Outlet } from 'react-router-dom'
 import { useWeathers } from '../hooks/UseWeather.ts'
+import Nav from './Nav/Nav.tsx'
+import Header from './Header/Header.tsx'
+import WeatherInfo from './WeatherPanel/WeatherInfo.tsx'
 
 function App() {
   const { data } = useWeathers()
@@ -6,10 +10,13 @@ function App() {
   return (
     <>
       <div className="app">
-        <h1>Fullstack Boilerplate - with Weather!</h1>
-        <ul>
+        {/* <ul>
           {data && data.map((weather) => <li key={weather}>{weather}</li>)}
-        </ul>
+        </ul> */}
+        <Header />
+        <Nav />
+        <Outlet />
+        <WeatherInfo />
       </div>
     </>
   )
