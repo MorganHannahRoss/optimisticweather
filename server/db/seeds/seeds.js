@@ -1,308 +1,98 @@
 export async function seed(knex) {
-  // Deletes ALL existing entries
-  await knex('activities').del()
+  try {
+    // deletes ALL existing entries
+    await knex('activity_weather_associations').del()
+    await knex('activities').del()
 
-  // Inserts seed entries
-  await knex('activities').insert([
-    { id: 1, activity: 'monopoly', weather: ['light_rain', 'overcast'] },
-    {
-      id: 2,
-      activity: 'tennis',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    { id: 3, activity: 'bowling', weather: [] },
-    {
-      id: 4,
-      activity: 'movie marathon',
-      weather: ['rain', 'overcast', 'cloudy'],
-    },
-    { id: 5, activity: 'hiking', weather: ['sunny', 'mostly_sunny'] },
-    { id: 6, activity: 'indoor rock climbing', weather: ['rain'] },
-    {
-      id: 7,
-      activity: 'picnic',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny', 'mostly_cloudy'],
-    },
-    {
-      id: 8,
-      activity: 'board games',
-      weather: [
-        'sunny',
-        'mostly_sunny',
-        'partly_sunny',
-        'mostly_cloudy',
-        'cloudy',
-        'overcast',
-      ],
-    },
-    { id: 9, activity: 'swimming', weather: ['sunny', 'mostly_sunny'] },
-    { id: 10, activity: 'baking', weather: ['rain'] },
-    {
-      id: 11,
-      activity: 'reading',
-      weather: [
-        'sunny',
-        'mostly_sunny',
-        'partly_sunny',
-        'mostly_cloudy',
-        'cloudy',
-        'overcast',
-      ],
-    },
-    {
-      id: 12,
-      activity: 'bike ride',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    { id: 13, activity: 'gardening', weather: ['sunny', 'mostly_sunny'] },
-    {
-      id: 14,
-      activity: 'painting',
-      weather: [
-        'sunny',
-        'mostly_sunny',
-        'partly_sunny',
-        'mostly_cloudy',
-        'cloudy',
-        'overcast',
-      ],
-    },
-    {
-      id: 15,
-      activity: 'cooking',
-      weather: [
-        'sunny',
-        'mostly_sunny',
-        'partly_sunny',
-        'mostly_cloudy',
-        'cloudy',
-        'overcast',
-      ],
-    },
-    {
-      id: 16,
-      activity: 'yoga',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny', 'mostly_cloudy'],
-    },
-    {
-      id: 17,
-      activity: 'bird watching',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny', 'mostly_cloudy'],
-    },
-    {
-      id: 18,
-      activity: 'karaoke night',
-      weather: ['overcast', 'cloudy', 'rain'],
-    },
-    {
-      id: 19,
-      activity: 'fishing',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny', 'mostly_cloudy'],
-    },
-    {
-      id: 20,
-      activity: 'pottery',
-      weather: [
-        'sunny',
-        'mostly_sunny',
-        'partly_sunny',
-        'mostly_cloudy',
-        'cloudy',
-        'overcast',
-      ],
-    },
-    {
-      id: 21,
-      activity: 'camping',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 22,
-      activity: 'stargazing',
-      weather: ['clear_night', 'mostly_clear_night'],
-    },
-    {
-      id: 23,
-      activity: 'paintball',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny', 'overcast'],
-    },
-    {
-      id: 24,
-      activity: 'volleyball',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 25,
-      activity: 'skateboarding',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 26,
-      activity: 'ice skating',
-      weather: [
-        'snow',
-        'possible_snow',
-        'freezing_rain',
-        'possible_freezing_rain',
-      ],
-    },
-    {
-      id: 27,
-      activity: 'go-karting',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny', 'overcast'],
-    },
-    {
-      id: 28,
-      activity: 'kayaking',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 29,
-      activity: 'writing',
-      weather: [
-        'sunny',
-        'mostly_sunny',
-        'partly_sunny',
-        'mostly_cloudy',
-        'cloudy',
-        'overcast',
-      ],
-    },
-    {
-      id: 30,
-      activity: 'sewing',
-      weather: [
-        'sunny',
-        'mostly_sunny',
-        'partly_sunny',
-        'mostly_cloudy',
-        'cloudy',
-        'overcast',
-      ],
-    },
-    {
-      id: 31,
-      activity: 'crafting',
-      weather: [
-        'sunny',
-        'mostly_sunny',
-        'partly_sunny',
-        'mostly_cloudy',
-        'cloudy',
-        'overcast',
-      ],
-    },
-    {
-      id: 32,
-      activity: 'barbecue',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny', 'mostly_cloudy'],
-    },
-    {
-      id: 33,
-      activity: 'snorkeling',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 34,
-      activity: 'surfing',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    { id: 35, activity: 'snowboarding', weather: ['snow', 'possible_snow'] },
-    { id: 36, activity: 'skiing', weather: ['snow', 'possible_snow'] },
-    {
-      id: 37,
-      activity: 'building a snowman',
-      weather: ['snow', 'possible_snow'],
-    },
-    {
-      id: 38,
-      activity: 'building a sandcastle',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 39,
-      activity: 'play frisbee',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 40,
-      activity: 'play soccer',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 41,
-      activity: 'play basketball',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 42,
-      activity: 'play baseball',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 43,
-      activity: 'play football',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 44,
-      activity: 'play volleyball',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 45,
-      activity: 'play tennis',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 46,
-      activity: 'play golf',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 47,
-      activity: 'play badminton',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 48,
-      activity: 'play table tennis',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 49,
-      activity: 'play cricket',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-    {
-      id: 50,
-      activity: 'play dodgeball',
-      weather: ['sunny', 'mostly_sunny', 'partly_sunny'],
-    },
-  ])
+    //  seed data for activities
+    const activities = [
+      { activity_name: 'monopoly' },
+      { activity_name: 'tennis' },
+      { activity_name: 'bowling' },
+      { activity_name: 'movie marathon' },
+      { activity_name: 'hiking' },
+      { activity_name: 'indoor rock climbing' },
+      { activity_name: 'picnic' },
+      { activity_name: 'board games' },
+      { activity_name: 'swimming' },
+      { activity_name: 'baking' },
+      { activity_name: 'reading' },
+      { activity_name: 'bike ride' },
+      { activity_name: 'gardening' },
+      { activity_name: 'painting' },
+      { activity_name: 'cooking' },
+      { activity_name: 'yoga' },
+      { activity_name: 'bird watching' },
+      { activity_name: 'karaoke night' },
+      { activity_name: 'fishing' },
+      { activity_name: 'pottery' },
+      { activity_name: 'camping' },
+      { activity_name: 'stargazing' },
+      { activity_name: 'paintball' },
+      { activity_name: 'volleyball' },
+      { activity_name: 'skateboarding' },
+      { activity_name: 'ice skating' },
+      { activity_name: 'go-karting' },
+      { activity_name: 'kayaking' },
+      { activity_name: 'writing' },
+      { activity_name: 'sewing' },
+      { activity_name: 'crafting' },
+      { activity_name: 'barbecue' },
+      { activity_name: 'snorkeling' },
+      { activity_name: 'surfing' },
+      { activity_name: 'snowboarding' },
+      { activity_name: 'skiing' },
+      { activity_name: 'building a snowman' },
+      { activity_name: 'building a sandcastle' },
+      { activity_name: 'play frisbee' },
+      { activity_name: 'play soccer' },
+      { activity_name: 'play basketball' },
+      { activity_name: 'play baseball' },
+      { activity_name: 'play football' },
+      { activity_name: 'play volleyball' },
+      { activity_name: 'play tennis' },
+      { activity_name: 'play golf' },
+      { activity_name: 'play badminton' },
+      { activity_name: 'play table tennis' },
+      { activity_name: 'play cricket' },
+      { activity_name: 'play dodgeball' },
+    ]
+
+    // insert activities and appoint them an ids
+    const activityIds = await knex('activities')
+      .insert(activities)
+      .returning('activity_id')
+
+    // define weather for each activity
+    const activityWeather = [
+      { activity_id: activityIds[0], weather_code: 'light_rain' },
+      { activity_id: activityIds[0], weather_code: 'overcast' },
+      { activity_id: activityIds[1], weather_code: 'sunny' },
+      { activity_id: activityIds[1], weather_code: 'mostly_sunny' },
+      { activity_id: activityIds[1], weather_code: 'partly_sunny' },
+      { activity_id: activityIds[2], weather_code: 'overcast' },
+      { activity_id: activityIds[3], weather_code: 'rain' },
+      { activity_id: activityIds[3], weather_code: 'cloudy' },
+      { activity_id: activityIds[4], weather_code: 'sunny' },
+      { activity_id: activityIds[4], weather_code: 'mostly_sunny' },
+      { activity_id: activityIds[5], weather_code: 'rain' },
+      { activity_id: activityIds[5], weather_code: 'rain_shower' },
+      { activity_id: activityIds[6], weather_code: 'sunny' },
+      { activity_id: activityIds[6], weather_code: 'mostly_sunny' },
+      { activity_id: activityIds[6], weather_code: 'partly_sunny' },
+      { activity_id: activityIds[6], weather_code: 'mostly_cloudy' },
+      { activity_id: activityIds[7], weather_code: 'sunny' },
+      { activity_id: activityIds[7], weather_code: 'mostly_sunny' },
+      { activity_id: activityIds[7], weather_code: 'partly_sunny' },
+      { activity_id: activityIds[7], weather_code: 'mostly_cloudy' },
+      { activity_id: activityIds[7], weather_code: 'cloudy' },
+      { activity_id: activityIds[7], weather_code: 'overcast' },
+    ]
+
+    // insert activity_weather
+    await knex('activity_weather').insert(activityWeather)
+  } catch (error) {
+    console.error('Error seeding data:', error)
+    throw error
+  }
 }
-
-// sunny
-// mostly_sunny
-// partly_sunny
-// mostly_cloudy
-// cloudy
-// overcast
-// overcast_with_low_clouds
-// fog
-// light_rain
-// rain
-// psbl_rain
-// rain_shower
-// thunderstorm
-// local_thunderstorms
-// light_snow
-// snow
-// psbl_snow
-// snow_shower
-// rain_and_snow
-// psbl_rain_and_snow
-// rain_and_snow
-// freezing_rain
-// psbl_freezing_rain
-// hail

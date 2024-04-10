@@ -3,6 +3,7 @@ export async function up(knex) {
     table.increments('id')
     table.string('activity')
     table.string('weather')
+    
   })
 }
 
