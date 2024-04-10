@@ -16,7 +16,9 @@ function App() {
         <Header />
         <div className="content-wrapper">
           <Nav />
-          <Outlet />
+          <div className='outlet-container'>
+            <Outlet />
+          </div>
           <WeatherInfo />
         </div>
       </div>
