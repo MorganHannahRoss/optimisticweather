@@ -14,9 +14,11 @@ function App() {
           {data && data.map((weather) => <li key={weather}>{weather}</li>)}
         </ul> */}
         <Header />
-        <Nav />
-        <Outlet />
-        <WeatherInfo />
+        <div className="content-wrapper">
+          <Nav />
+          <Outlet />
+          <WeatherInfo />
+        </div>
       </div>
     </>
   )
