@@ -9,6 +9,7 @@ import ActivityHome from './components/ActivityPanel/ActivityHome'
 import ActivityList from './components/ActivityPanel/ActivityList'
 import Events from './components/ActivityPanel/Events'
 import AIPopup from './components/AIPopup/AIPopup'
+import Clothing from './components/ActivityPanel/Clothing'
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
     {/* second route here till we work out if we need both */}
     <Route path='/activities/:id' element={<ActivityList />} />
     <Route path='/events' element={<Events />} />
+    <Route path='/clothing' element={<Clothing />} />
     <Route path='/ai' element={<AIPopup />} />
   </Route>
 ])
