@@ -1,8 +1,11 @@
+import SingleEvent from './SingleEvent'
+
 function Events() {
   return (
     <>
       <div>
-        <p>Hello, Events World!</p>
+        <h3>Events</h3>
+        <SingleEvent />
       </div>
     </>
   )
