@@ -5,8 +5,19 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.header-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  > .search-bar {
+    justify-self: end;
+    padding: 2rem;
+    padding-top: 2.2rem;
+  }
+}
+
 .content-wrapper {
   display: grid;
+  padding-top: 2rem;
   grid-template-columns: repeat(3, auto);
   text-align: center;
 }

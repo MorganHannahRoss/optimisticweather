@@ -1,8 +1,13 @@
+import SearchBar from './SearchBar'
+
 function Header() {
   return (
     <>
-      <div>
-        <p>Hello, Header World!</p>
+      <div className='header-wrapper'>
+        <h1>☀️ Optimistic Weather</h1>
+        <div className="search-bar">
+          <SearchBar />
+        </div>
       </div>
     </>
   )
