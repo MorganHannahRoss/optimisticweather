@@ -3,6 +3,7 @@
 html, 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: rgb(187, 205, 230);
 }
 
 .header-wrapper {
@@ -25,6 +26,7 @@ body {
 .nav-list {
   display: grid;
   text-align: start;
+  max-height: 20px;
   > a.active {
     font-weight: bold;
   }
@@ -33,4 +35,24 @@ body {
     text-decoration: none;
     color: black;
 }}
+
+.activity-card {
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+  background-color: rgba(255, 255, 255, 0.185);
+  > .activity-info {
+    display: grid;
+    margin: 0 1rem;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, 12rem);
+    > h5 {
+      font-size: large;
+      margin: 1rem 0;
+    }
+  }
+}
 
