@@ -1,8 +1,7 @@
-export interface Weather {
-  id: number
+interface Activity {
+  activity_id: number
   name: string
-}
-
-export interface WeatherData {
-  name: string
+  weather: string
+  type: string
+  optionaldetails: string
 }
