@@ -1,4 +1,3 @@
-import WeatherInfo from "../WeatherPanel/WeatherInfo"
 import SingleActivity from "./SingleActivity"
 
 const activityData = [{
