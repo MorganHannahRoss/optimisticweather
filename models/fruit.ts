@@ -1,8 +1,8 @@
-export interface Fruit {
+export interface Weather {
   id: number
   name: string
 }
 
-export interface FruitData {
+export interface WeatherData {
   name: string
 }
