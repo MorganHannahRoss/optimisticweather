@@ -4,3 +4,22 @@ html,
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  text-align: center;
+}
+
+.nav-list {
+  display: grid;
+  text-align: start;
+  > a.active {
+    font-weight: bold;
+  }
+ & a {
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}}
+
