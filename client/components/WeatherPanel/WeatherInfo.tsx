@@ -15,36 +15,21 @@ function WeatherInfo() {
     return <p>...Loading</p>
   }
 
-  // icon
-  // temp
-  // wind
-  // what it feels like
-  // houerly weather
   return (
     <>
       <div>
         <p>Hello, WeatherInfo World!</p>
-        <p>current weather</p>
-        <p>{data.current.cloud_cover}</p>
-        <p>{data.current.icon}</p>
-        <p>{data.current.icon_num}</p>
-        <p>{data.current.precipitation.total}</p>
-        <p>{data.current.precipitation.type}</p>
-        <p>{data.current.summary}</p>
-        <p>{data.current.temperature}</p>
-        <p>{data.current.wind.angle}</p>
-        <p>{data.current.wind.dir}</p>
-        <p>{data.current.wind.speed}</p>
-        {/* <h3>Auckland</h3>
-        <div>
-          <div>🍃</div>
-          <p>Windy</p>
-          <p>21 degrees</p>
-          <p>Temp: 19 low | 21 high</p>
-          <p>Wind: 34km/h gusting 65km/h</p>
-          <p>UV: Sun protection untill 3pm</p>
-          <p>Vis: 16km perfectly clear</p>
-        </div> */}
+        <p>Current Weather: {data.current.summary}</p>
+        <p>Cloud Coverage: {data.current.cloud_cover}% </p>
+        <img
+          src={`../../public/icons/small/${data.current.icon_num}.png`}
+          alt={data.current.icon}
+        />
+        <p>Precipitation: {data.current.precipitation.type}</p>
+        <p>Temperature: {data.current.temperature}°C</p>
+        <p>Wind Angle: {data.current.wind.angle}°</p>
+        <p>Wind Direction: {data.current.wind.dir}</p>
+        <p>Wind Speed: {data.current.wind.speed} KPH</p>
       </div>
     </>
   )
