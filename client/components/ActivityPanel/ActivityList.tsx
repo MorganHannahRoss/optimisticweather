@@ -1,14 +1,16 @@
 import SingleActivity from './SingleActivity'
 import { useActivities } from '../../hooks/useActivities.ts'
 import WeatherFilter from './WeatherFilter.tsx'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 function ActivityList() {
   const { data, isPending, isError, error } = useActivities()
   const [selectedWeather, setSelectedWeather] = useState('')
 
-  const handleWeatherChange = (weather: string) => {
-    setSelectedWeather(weather)
+  const handleWeatherChange: React.ChangeEventHandler<HTMLSelectElement> = (
+    e,
+  ) => {
+    setSelectedWeather(e.target.value)
   }
 
   const filteredActivities = selectedWeather

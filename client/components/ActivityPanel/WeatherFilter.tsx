@@ -1,6 +1,3 @@
-import { ActivityData } from '../../../models/activities'
-import { useActivities } from '../../hooks/useActivities'
-
 function WeatherFilter({ onChange }) {
   const weatherOptions = [
     { label: 'All Weathers', value: '' },
@@ -12,7 +9,7 @@ function WeatherFilter({ onChange }) {
   ]
 
   return (
-    <select onChange={(e) => onChange(e.target.value)}>
+    <select onChange={onChange}>
       {weatherOptions.map((weather) => (
         <option key={weather.value} value={weather.value}>
           {weather.label}
