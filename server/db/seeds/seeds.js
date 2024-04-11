@@ -58,7 +58,7 @@ export async function seed(knex) {
       { activity_name: 'play dodgeball' },
     ]
 
-    // insert activities and appoint them an ids
+    // appoint activities an ids
     const activityIds = await knex('activities')
       .insert(activities)
       .returning('activity_id')
