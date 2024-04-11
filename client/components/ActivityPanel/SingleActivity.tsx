@@ -1,4 +1,6 @@
-function SingleActivity({ activity, weather, type, details }) {
+import { ActivityData } from "../../../models/activities"
+
+function SingleActivity({ activity, weather, type, details }: ActivityData) {
   return (
     <>
       <div className="activity-card">

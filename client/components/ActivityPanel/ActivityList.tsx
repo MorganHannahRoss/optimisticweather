@@ -1,31 +1,21 @@
 import SingleActivity from "./SingleActivity"
-
-const activityData = [{
-  activity_id: 1,
-  name: 'Fishing 🎣',
-  weather: 'sunny ☀️',
-  type: 'half day or longer',
-  optionaldetails: 'Spend a relaxing day out by the lake fishing.'
-}, {
-  activity_id: 2,
-  name: 'Hiking ⛰️',
-  weather: 'overcast 🌥️',
-  type: 'full day',
-  optionaldetails: 'Make sure to tell someone you are going for a hike!'
-}, {
-  activity_id: 3,
-  name: 'Go see a movie 🍿',
-  weather: 'rain 🌧️',
-  type: 'short',
-  optionaldetails: 'Take a look at whats showing at your local cinema'
-}]
+import { useActivities } from "../../hooks/useActivities.ts"
 
 function ActivityList() {
+  const { data, isPending, isError, error } = useActivities()
+  const activityData = data
+
+  if (isPending) {
+    return <p>loading...</p>
+  }
+  if (isError) {
+    return <span>Oops: {error.message}</span>
+  }
   return (
     <>
       <div className="activity-card-wrapper">
         <h3>Activities</h3>
-        {activityData.map((item => <SingleActivity activity={item.name} weather={item.weather} type={item.type} details={item.optionaldetails} />))}
+        {activityData?.map((item => <SingleActivity key={item.activity_id} activity={item.name} weather={item.weather} type={item.type} details={item.optionaldetails} />))}
       </div>
     </>
   )

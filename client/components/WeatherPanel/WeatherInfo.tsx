@@ -22,7 +22,7 @@ function WeatherInfo() {
           <p>Current Weather: {data.current.summary}</p>
           <p>Cloud Coverage: {data.current.cloud_cover}% </p>
           <img
-            src={`../../public/icons/small/${data.current.icon_num}.png`}
+            src={`../../icons/small/${data.current.icon_num}.png`}
             alt={data.current.icon}
           />
           <p>Precipitation: {data.current.precipitation.type}</p>

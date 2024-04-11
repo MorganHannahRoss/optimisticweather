@@ -1,12 +1,14 @@
 import express from 'express'
 import * as Path from 'node:path'
 import weatherRoutes from './routes/weather'
+import activityRoutes from './routes/activities.ts'
 
 const server = express()
 
 server.use(express.json())
 
 server.use('/api/v1/weather', weatherRoutes)
+server.use('/api/v1/activities', activityRoutes)
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))
