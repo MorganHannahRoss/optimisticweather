@@ -3,11 +3,17 @@
 html, 
 body {
   font-family: 'Montserrat', sans-serif;
+  margin: 0;
   background-color: rgb(187, 205, 230);
+  // placeholder
+  background-image: url("../../images/sky-with-clouds.jpg");
 }
 
 .header-wrapper {
   display: grid;
+  padding: 5px;
+  padding-left: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
   grid-template-columns: repeat(2, auto);
   > .search-bar {
     justify-self: end;
@@ -18,32 +24,40 @@ body {
 
 .content-wrapper {
   display: grid;
-  padding-top: 2rem;
   grid-template-columns: repeat(3, auto);
+  column-gap: 10px;
   text-align: center;
 }
-
-.nav-list {
+.nav-list-container {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  padding-top: 1rem;
+  height: 100vh;
+  max-width: 10rem;
+  > .nav-list {
   display: grid;
   text-align: start;
   max-height: 20px;
   > a.active {
     font-weight: bold;
+    background-color: rgba(88, 88, 88, 0.1);
+    padding-left: 10px;
   }
  & a {
-    padding: 5px;
+    padding: 5px 5px 5px 5px;
     text-decoration: none;
     color: black;
-}}
+}}}
 
-.activity-card {
+.activity-card-wrapper {
+  padding-top: 1rem;
+  > .activity-card {
   border: 1px solid black;
   border-radius: 20px;
   margin: 1rem;
   margin-left: auto;
   margin-right: auto;
   max-width: 700px;
-  background-color: rgba(255, 255, 255, 0.185);
+  background-color: rgba(255, 255, 255, 0.6);
   > .activity-info {
     display: grid;
     margin: 0 1rem;
@@ -53,6 +67,19 @@ body {
       font-size: large;
       margin: 1rem 0;
     }
+  }
+}}
+
+.weather-card-wrapper {
+  padding-top: 1rem;
+  > .weather-card {
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.6);
   }
 }
 

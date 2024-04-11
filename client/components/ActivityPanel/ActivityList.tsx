@@ -23,7 +23,7 @@ const activityData = [{
 function ActivityList() {
   return (
     <>
-      <div>
+      <div className="activity-card-wrapper">
         <h3>Activities</h3>
         {activityData.map((item => <SingleActivity activity={item.name} weather={item.weather} type={item.type} details={item.optionaldetails} />))}
       </div>

@@ -17,19 +17,21 @@ function WeatherInfo() {
 
   return (
     <>
-      <div>
-        <p>Hello, WeatherInfo World!</p>
-        <p>Current Weather: {data.current.summary}</p>
-        <p>Cloud Coverage: {data.current.cloud_cover}% </p>
-        <img
-          src={`../../public/icons/small/${data.current.icon_num}.png`}
-          alt={data.current.icon}
-        />
-        <p>Precipitation: {data.current.precipitation.type}</p>
-        <p>Temperature: {data.current.temperature}°C</p>
-        <p>Wind Angle: {data.current.wind.angle}°</p>
-        <p>Wind Direction: {data.current.wind.dir}</p>
-        <p>Wind Speed: {data.current.wind.speed} KPH</p>
+      <div className="weather-card-wrapper">
+        <div className="weather-card">
+          <p>Hello, WeatherInfo World!</p>
+          <p>Current Weather: {data.current.summary}</p>
+          <p>Cloud Coverage: {data.current.cloud_cover}% </p>
+          <img
+            src={`../../public/icons/small/${data.current.icon_num}.png`}
+            alt={data.current.icon}
+          />
+          <p>Precipitation: {data.current.precipitation.type}</p>
+          <p>Temperature: {data.current.temperature}°C</p>
+          <p>Wind Angle: {data.current.wind.angle}°</p>
+          <p>Wind Direction: {data.current.wind.dir}</p>
+          <p>Wind Speed: {data.current.wind.speed} KPH</p>
+        </div>
       </div>
     </>
   )
