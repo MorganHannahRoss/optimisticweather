@@ -1,9 +1,9 @@
 function WeatherInfo() {
   return (
     <>
-      <div>
+      <div className="weather-card-wrapper">
         <h3>Auckland</h3>
-        <div>
+        <div className="weather-card">
           <div>🍃</div>
           <p>Windy</p>
           <p>21 degrees</p>
