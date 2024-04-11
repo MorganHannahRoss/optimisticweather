@@ -5,3 +5,10 @@ export interface Activity {
   type: string
   optionaldetails: string
 }
+
+export interface ActivityData {
+  activity: string
+  weather: string
+  type: string
+  details: string
+}

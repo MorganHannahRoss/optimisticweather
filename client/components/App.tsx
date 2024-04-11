@@ -8,9 +8,6 @@ function App() {
   return (
     <>
       <div className="app">
-        {/* <ul>
-          {data && data.map((weather) => <li key={weather}>{weather}</li>)}
-        </ul> */}
         <Header />
         <div className="content-wrapper">
           <Nav />
