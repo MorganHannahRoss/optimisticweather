@@ -1,5 +1,6 @@
 import SingleActivity from './SingleActivity'
 import { useActivities } from '../../hooks/useActivities.ts'
+import WeatherFilter from './WeatherFilter.tsx'
 
 function ActivityList() {
   const { data, isPending, isError, error } = useActivities()
@@ -17,6 +18,7 @@ function ActivityList() {
     <>
       <div className="activity-card-wrapper">
         <h3>Activities</h3>
+        <WeatherFilter />
         {activityData?.map((item) => (
           <SingleActivity
             key={item.activity_id}

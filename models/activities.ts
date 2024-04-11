@@ -12,3 +12,7 @@ export interface ActivityData {
   type: string
   details: string
 }
+
+export interface Weather {
+  weather: string
+}
