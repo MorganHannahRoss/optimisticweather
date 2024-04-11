@@ -2,6 +2,7 @@ export async function seed(knex) {
   try {
     // deletes ALL existing entries
     await knex('sqlite_sequence').del()
+    //then run in order from 1 after
     await knex('activity_weather').del()
     await knex('activities').del()
 
