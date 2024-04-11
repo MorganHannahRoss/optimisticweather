@@ -6,7 +6,6 @@ function WeatherInfo() {
     queryKey: ['swmovies'],
     queryFn: () => getWeather(),
   })
-  console.log(data)
   if (isError) {
     return <p>Something went wrong</p>
   }
