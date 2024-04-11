@@ -1,13 +1,12 @@
 import express from 'express'
 import * as Path from 'node:path'
-
-import weatherRoutes from './routes/weathers.ts'
+import weatherRoutes from './routes/weather'
 
 const server = express()
 
 server.use(express.json())
 
-server.use('/api/v1/weathers', weatherRoutes)
+server.use('/api/v1/weather', weatherRoutes)
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))

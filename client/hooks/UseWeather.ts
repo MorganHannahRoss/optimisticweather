@@ -4,10 +4,10 @@ import {
   useQueryClient,
   MutationFunction,
 } from '@tanstack/react-query'
-import { getWeathers } from '../apis/weather.ts'
+import { getWeather } from '../apis/weather.ts'
 
 export function useWeathers() {
-  const query = useQuery({ queryKey: ['weathers'], queryFn: getWeathers })
+  const query = useQuery({ queryKey: ['weathers'], queryFn: getWeather })
   return {
     ...query,
     // Extra queries go here e.g. addWeather: useAddWeather()
@@ -21,7 +21,7 @@ export function useWeathersMutation<TData = unknown, TVariables = unknown>(
   const mutation = useMutation({
     mutationFn,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['weathers'] })
+      queryClient.invalidateQueries({ queryKey: ['weather'] })
     },
   })
 

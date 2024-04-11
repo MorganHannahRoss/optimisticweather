@@ -1,9 +1,9 @@
 import request from 'superagent'
+import { Weather } from '../../models/weather'
 
-const rootUrl = '/api/v1'
+const rootURL = '/api/v1/weather'
 
-export function getWeathers(): Promise<string[]> {
-  return request.get(rootUrl + '/weathers').then((res) => {
-    return res.body.weathers
-  })
+export async function getWeather(): Promise<Weather> {
+  const response = await request.get(`${rootURL}`)
+  return response.body
 }

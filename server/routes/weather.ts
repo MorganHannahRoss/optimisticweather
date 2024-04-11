@@ -1,17 +1,20 @@
-import { Router } from 'express'
+import express from 'express'
+import request from 'superagent'
+import 'dotenv/config'
 
-import * as db from '../db/weatherknex.ts'
+const router = express.Router()
+const weatherApiKey = process.env.WEATHER_API_KEY
 
-const router = Router()
-
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
   try {
-    const weathers = await db.getAllWeathers()
+    const weather = await request.get(
+      `https://www.meteosource.com/api/v1/free/point?lat=41S&lon=174E&sections=all&timezone=auto&language=en&units=auto&key=${weatherApiKey}`,
+    )
 
-    res.json({ weathers: weathers.map((weather) => weather.name) })
+    res.json(weather.body)
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ message: 'Something went wrong' })
+    res.sendStatus(500)
+    next(error)
   }
 })
 
