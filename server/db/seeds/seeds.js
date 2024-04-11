@@ -65,8 +65,6 @@ export async function seed(knex) {
       await knex('activities').insert(activities).returning('id')
     ).map((activity) => activity.id)
 
-    console.log(activityIds[0])
-
     // define weather for each activity
     const activityWeather = [
       { activity_id: activityIds[0], weather_code: 'light_rain' },
