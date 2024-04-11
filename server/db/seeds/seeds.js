@@ -65,7 +65,7 @@ export async function seed(knex) {
       await knex('activities').insert(activities).returning('id')
     ).map((activity) => activity.id)
 
-    console.log(activityIds[0])
+    // console.log(activityIds[0])
 
     // define weather for each activity
     const activityWeather = [
