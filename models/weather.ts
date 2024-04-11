@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export interface Weather {
   lat: string
   lon: string
@@ -65,3 +66,5 @@ export interface CloudCover {
 export interface Hourly {
   data: AllDayElement[]
 }
+=======
+>>>>>>> main
