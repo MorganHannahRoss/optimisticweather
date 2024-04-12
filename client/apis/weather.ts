@@ -3,7 +3,7 @@ import { Weather } from '../../models/weather'
 
 const rootURL = '/api/v1/weather'
 
-export async function getWeather(): Promise<Weather> {
-  const response = await request.get(`${rootURL}`)
+export async function getWeather(lat: string, lon: string): Promise<Weather> {
+  const response = await request.get(`${rootURL}?lat=${lat}&lon=${lon}`)
   return response.body
 }

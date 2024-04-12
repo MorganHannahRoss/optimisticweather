@@ -1,4 +1,5 @@
 import { ActivityData } from '../../../models/activities'
+import WeatherFilter from './WeatherFilter'
 
 function SingleActivity({ activity, weather, type, details }: ActivityData) {
   return (

@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
 
-html, 
+html,
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   background-color: rgb(187, 205, 230);
   // placeholder
-  background-image: url("../../images/sky-with-clouds.jpg");
+  background-image: url('../../images/sky-with-clouds.jpg');
 }
 
 .header-wrapper {
@@ -29,24 +29,30 @@ body {
   text-align: center;
 }
 .nav-list-container {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0)
+  );
   padding-top: 1rem;
   height: 100vh;
   max-width: 10rem;
   > .nav-list {
-  display: grid;
-  text-align: start;
-  max-height: 20px;
-  > a.active {
-    font-weight: bold;
-    background-color: rgba(88, 88, 88, 0.1);
-    padding-left: 10px;
+    display: grid;
+    text-align: start;
+    max-height: 20px;
+    > a.active {
+      font-weight: bold;
+      background-color: rgba(88, 88, 88, 0.1);
+      padding-left: 10px;
+    }
+    & a {
+      padding: 5px 5px 5px 5px;
+      text-decoration: none;
+      color: black;
+    }
   }
- & a {
-    padding: 5px 5px 5px 5px;
-    text-decoration: none;
-    color: black;
-}}}
+}
 
 .activity-card-wrapper {
   padding-top: 1rem;
@@ -127,3 +133,21 @@ body {
   }
 }
 
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter {
+  margin: 0 2rem;
+  position: relative;
+
+  & select {
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgb(204, 204, 204);
+    opacity: 0.8;
+    text-align: center;
+  }
+}
