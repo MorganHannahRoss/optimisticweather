@@ -10,7 +10,7 @@ export const up = (knex) => {
     table.string('type')
     table.string('optionaldetails')
   })
-};
+}
 
 /**
  * @param { import("knex").Knex } knex
@@ -18,4 +18,4 @@ export const up = (knex) => {
  */
 export const down = (knex) => {
   return knex.schema.dropTable('activities')
-};
+}
