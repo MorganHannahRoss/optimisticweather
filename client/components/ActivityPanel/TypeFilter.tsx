@@ -10,13 +10,15 @@ function TypeFilter({ onChange }) {
   ]
 
   return (
-    <select onChange={onChange}>
-      {typeOptions.map((type) => (
-        <option key={type.value} value={type.value}>
-          {type.label}
-        </option>
-      ))}
-    </select>
+    <div className="filter">
+      <select onChange={onChange}>
+        {typeOptions.map((type) => (
+          <option key={type.value} value={type.value}>
+            {type.label}
+          </option>
+        ))}
+      </select>
+    </div>
   )
 }
 

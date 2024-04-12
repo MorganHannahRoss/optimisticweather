@@ -35,8 +35,10 @@ function ActivityList() {
     <>
       <div className="activity-card-wrapper">
         <h3>Activities</h3>
-        <WeatherFilter onChange={handleWeatherChange} />
-        <TypeFilter onChange={handleTypeChange} />
+        <div className="filter-container">
+          <WeatherFilter onChange={handleWeatherChange} />
+          <TypeFilter onChange={handleTypeChange} />
+        </div>
         {filteredActivities?.map((item) => (
           <SingleActivity
             key={item.activity_id}

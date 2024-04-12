@@ -9,13 +9,15 @@ function WeatherFilter({ onChange }) {
   ]
 
   return (
-    <select onChange={onChange}>
-      {weatherOptions.map((weather) => (
-        <option key={weather.value} value={weather.value}>
-          {weather.label}
-        </option>
-      ))}
-    </select>
+    <div className="filter">
+      <select onChange={onChange}>
+        {weatherOptions.map((weather) => (
+          <option key={weather.value} value={weather.value}>
+            {weather.label}
+          </option>
+        ))}
+      </select>
+    </div>
   )
 }
 
