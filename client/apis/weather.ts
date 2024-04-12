@@ -5,7 +5,7 @@ import { Weather } from '../../models/weather'
 
 export async function getWeather(): Promise<Weather> {
   const response = await request.get(
-    `https://www.meteosource.com/api/v1/free/point?lat=41S&lon=174E&sections=all&timezone=auto&language=en&units=auto&key=fih69ecqhwqbv51n1vtauic663kn3v40ed36xhyo`,
+    `https://www.meteosource.com/api/v1/free/point?lat=41S&lon=174E&sections=all&timezone=auto&language=en&units=auto&key=5bhuferyer6wh5mk7s9kexlpu36myifl3gj37bnw`,
   )
   return response.body
 }
