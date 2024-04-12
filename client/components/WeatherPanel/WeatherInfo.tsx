@@ -1,11 +1,27 @@
 import { useQuery } from '@tanstack/react-query'
 import { getWeather } from '../../apis/weather'
+import { Location } from '../../../models/locations'
+import { useEffect } from 'react'
 
-function WeatherInfo() {
-  const { isPending, isError, data } = useQuery({
-    queryKey: ['swmovies'],
-    queryFn: () => getWeather(),
+interface WeatherInfoProps {
+  location: Location
+}
+
+function WeatherInfo(props: WeatherInfoProps) {
+  const { location } = props
+
+  const { isPending, isError, data, refetch } = useQuery({
+    queryKey: ['swmovies', location.lat, location.lon],
+    queryFn: () => {
+      console.log(props.location.city)
+      return getWeather(location.lat, location.lon)
+    },
   })
+
+  useEffect(() => {
+    refetch()
+  }, [location.lat, location.lon])
+
   if (isError) {
     return <p>Something went wrong</p>
   }
