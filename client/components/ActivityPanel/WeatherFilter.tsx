@@ -1,4 +1,8 @@
-function WeatherFilter({ onChange }) {
+interface Props {
+  onChange: React.ChangeEventHandler<HTMLSelectElement>
+}
+
+function WeatherFilter({ onChange }: Props) {
   const weatherOptions = [
     { label: 'All Weathers', value: '' },
     { label: 'Cloudy', value: 'cloudy' },

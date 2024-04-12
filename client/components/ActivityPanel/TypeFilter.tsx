@@ -1,4 +1,8 @@
-function TypeFilter({ onChange }) {
+interface Props {
+  onChange: React.ChangeEventHandler<HTMLSelectElement>
+}
+
+function TypeFilter({ onChange }: Props) {
   const typeOptions = [
     { label: 'All Types', value: '' },
     { label: 'Half day or longer', value: 'half day or longer' },
