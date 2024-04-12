@@ -7,8 +7,11 @@ const weatherApiKey = process.env.WEATHER_API_KEY
 
 router.get('/', async (req, res, next) => {
   try {
+    const lat = req.query.lat || '41S'
+    const lon = req.query.lon || '174E'
+
     const weather = await request.get(
-      `https://www.meteosource.com/api/v1/free/point?lat=41S&lon=174E&sections=all&timezone=auto&language=en&units=auto&key=${weatherApiKey}`,
+      `https://www.meteosource.com/api/v1/free/point?lat=${lat}&lon=${lon}&sections=all&timezone=auto&language=en&units=auto&key=${weatherApiKey}`,
     )
 
     res.json(weather.body)
