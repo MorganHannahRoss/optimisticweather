@@ -1,11 +1,26 @@
 import { useQuery } from '@tanstack/react-query'
 import { getWeather } from '../../apis/weather'
+import { Location } from '../../../models/locations'
+import { useEffect } from 'react'
 
-function WeatherInfo() {
-  const { isPending, isError, data } = useQuery({
-    queryKey: ['weather'],
-    queryFn: () => getWeather(),
+interface WeatherInfoProps {
+  location: Location
+}
+
+function WeatherInfo(props: WeatherInfoProps) {
+  const { location } = props
+
+  const { isPending, isError, data, refetch } = useQuery({
+    queryKey: ['weather', location.lat, location.lon],
+    queryFn: () => {
+      return getWeather(location.lat, location.lon)
+    },
   })
+
+  useEffect(() => {
+    refetch()
+  }, [location.lat, location.lon])
+
   if (isError) {
     return <p>Something went wrong</p>
   }
@@ -14,7 +29,7 @@ function WeatherInfo() {
     return <div className="loader"></div>
   }
   const dailyData = data.daily.data
-  console.log(dailyData)
+
   return (
     <>
       <div className="weather-card-wrapper">
@@ -31,7 +46,7 @@ function WeatherInfo() {
               <p className="summary-text">{data.current.summary}</p>
               <img
                 className="weather-icon"
-                src={`../../icons/small/${data.current.icon_num}.png`}
+                src={`/icons/small/${data.current.icon_num}.png`}
                 alt={data.current.icon}
               />
             </div>
@@ -42,7 +57,7 @@ function WeatherInfo() {
                   <p>{day.all_day.temperature}°C</p>
                   <img
                     className="weather-icon"
-                    src={`../../icons/small/${day.icon}.png`}
+                    src={`../../icons/small/${day.icon}.png`} // this needs fixing
                     alt={data.current.icon}
                   />
                 </div>
