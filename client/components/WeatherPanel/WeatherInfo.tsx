@@ -11,7 +11,6 @@ function WeatherInfo(props: WeatherInfoProps) {
   const { location } = props
 
   const { isPending, isError, data, refetch } = useQuery({
-    
     queryKey: ['weather', location.lat, location.lon],
     queryFn: () => {
       return getWeather(location.lat, location.lon)
@@ -23,7 +22,11 @@ function WeatherInfo(props: WeatherInfoProps) {
   }, [location.lat, location.lon])
 
   if (isError) {
-    return <p>Something went wrong</p>
+    return (
+      <div>
+        <p>unable to load weather</p>
+      </div>
+    )
   }
 
   if (isPending) {
