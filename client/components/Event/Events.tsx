@@ -17,8 +17,17 @@ function Events() {
   console.log(data.events[0])
   return (
     <>
-      <h1>{data.events[0].name}</h1>
-      <SingleEvent />
+      <div className="activity-card-wrapper">
+        <h3>Events</h3>
+        {data.events.map((event) => (
+          <SingleEvent
+            key={event.id}
+            name={event.name}
+            description={event.description}
+          />
+        ))}
+      </div>
+      
     </>
   )
 }
