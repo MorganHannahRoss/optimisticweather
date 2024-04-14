@@ -1,6 +1,6 @@
 import { Location } from '../../../models/locations'
-import { useEffect } from 'react'
-import useWeather from '../../hooks/useWeather.ts'
+import { createContext, useEffect } from 'react'
+import useWeather from '../../hooks/useWeather'
 import LocationDetails from './LocationDetails'
 import DayOfWeek from './DayOfWeek'
 
@@ -16,7 +16,7 @@ function WeatherInfo(props: WeatherInfoProps) {
     refetch()
   }, [location.lat, location.lon])
 
-  console.log(data)
+  const WeatherContext = createContext(data?.current.temperature)
 
   if (isError) {
     return <p>Something went wrong</p>

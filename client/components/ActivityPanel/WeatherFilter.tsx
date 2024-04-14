@@ -1,20 +1,8 @@
-import React, { useState } from 'react'
-import useWeather from '../../hooks/useWeather'
-import { Location } from '../../../models/locations'
-
 interface Props {
   onChange: React.ChangeEventHandler<HTMLSelectElement>
 }
 
-interface locaiton {
-  location: Location
-}
-
-function WeatherFilter({ onChange }: Props, location: Location) {
-  const [weatherLabel, setWeatherLabel] = useState('')
-
-  // const { data } = useWeather(location)
-
+function WeatherFilter({ onChange }: Props) {
   const weatherOptions = [
     { label: 'All Weathers', value: '' },
     { label: 'Cloudy', value: 'cloudy' },
