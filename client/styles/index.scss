@@ -9,6 +9,98 @@ body {
   background-image: url('../images/sky-with-clouds.jpg');
 }
 
+p{
+  margin: 0;
+}
+
+/* WEATHER CARD */
+.loader {
+  width: 80px;
+  height: 40px;
+  border-radius: 100px 100px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  inset: 0 0 -100%;
+  background: 
+    radial-gradient(farthest-side,#ffd738 80%,#0000) left 70% top    20%/15px 15px,
+    radial-gradient(farthest-side,#020308 92%,#0000) left 65% bottom 19%/12px 12px,
+    radial-gradient(farthest-side,#ecfefe 92%,#0000) left 70% bottom 20%/15px 15px,
+    linear-gradient(#9eddfe 50%,#020308 0);
+  background-repeat: no-repeat;
+  animation: l5 2s infinite;
+}
+@keyframes l5 {
+  0%,20%   {transform: rotate(0)}
+  40%,60%  {transform: rotate(.5turn)}
+  80%,100% {transform: rotate(1turn)}
+}
+
+.weather-card-wrapper {
+  position: relative;
+  padding-top: 1rem;
+}
+
+.weather-card {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  margin: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 50rem; 
+}
+
+.weather-background{
+  border-radius: 30px;
+}
+
+.weather-info-container{
+  position: absolute;
+  padding-top: 8rem;
+}
+
+.weather-icon-container{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5rem;
+}
+
+.weather-icon{
+  margin-left: 1rem;
+}
+
+.temperature-text{
+  margin-top: 4rem;
+  font-size: 3rem;
+  color: white;
+}
+
+.summary-text{
+  font-size: 2rem;
+  color: white;
+}
+
+.weekly-weather-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.weekly-info-container{
+  display: flex;
+  align-items: center;
+  padding-left: 8rem;
+}
+
 .header-wrapper {
   display: grid;
   padding: 5px;
@@ -126,22 +218,65 @@ body {
   font-size: 18px;
 }
 
-
-
-
-
-
-.weather-card-wrapper {
+.activity-card-wrapper {
   padding-top: 1rem;
-  > .weather-card {
-    border: 1px solid black;
-    border-radius: 20px;
-    margin: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px;
-    background-color: rgba(255, 255, 255, 0.6);
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+}
+.activity-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 12px 15px #00000033;
+  width: 60%; 
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #ffffffca;
+}
+
+.activity-info {
+  flex: 1;
+}
+
+.activity-header {
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.activity-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 35px;
+  text-align: left;
+}
+
+.activity-tags {
+  display: flex;
+  gap: 10px;
+}
+
+.activity-tag {
+  padding: 5px;
+  background-color: #f2f2f2; 
+  border-radius: 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.activity-tag:hover {
+  background-color: rgb(56, 111, 223);
+  color: #fff;
+}
+
+.activity-description {
+  flex-basis: 50%; 
+  padding-left: 20px; 
+  border-left: 1px solid #eee;
+  font-size: 18px;
 }
 
 .filter-container {
