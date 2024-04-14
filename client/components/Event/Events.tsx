@@ -1,7 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
 import { getEvent } from '../../apis/eventfindaApi'
+import SingleEvent from './SingleEvent'
 
-function EventList() {
+function Events() {
   const { isPending, isError, data } = useQuery({
     queryKey: ['event'],
     queryFn: () => getEvent(),
@@ -17,8 +18,9 @@ function EventList() {
   return (
     <>
       <h1>{data.events[0].name}</h1>
+      <SingleEvent />
     </>
   )
 }
 
-export default EventList
+export default Events

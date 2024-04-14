@@ -2,7 +2,6 @@ import { Outlet } from 'react-router-dom'
 import Nav from './Nav/Nav.tsx'
 import Header from './Header/Header.tsx'
 import WeatherInfo from './WeatherPanel/WeatherInfo.tsx'
-import EventList from './Event/EventList.tsx'
 import { useState } from 'react'
 import { Location } from '../../models/locations.ts'
 
@@ -25,7 +24,6 @@ function App() {
             <Outlet />
           </div>
           <WeatherInfo location={location} />
-          <EventList />
         </div>
       </div>
     </>
