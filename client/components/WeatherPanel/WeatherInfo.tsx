@@ -24,7 +24,11 @@ function WeatherInfo(props: WeatherInfoProps) {
   }, [location.lat, location.lon])
 
   if (isError) {
-    return <p>Something went wrong</p>
+    return (
+      <div>
+        <p>unable to load weather</p>
+      </div>
+    )
   }
 
   if (isPending) {
