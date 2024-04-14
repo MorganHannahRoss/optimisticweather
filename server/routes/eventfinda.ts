@@ -3,8 +3,8 @@ import request from 'superagent'
 import 'dotenv/config'
 
 const router = express.Router()
-const username = 'optimisticweather'
-const password = 'x9k5wshg8t87'
+const username = process.env.USERNAME
+const password = process.env.PASSWORD
 
 router.get('/', async (req, res, next) => {
   try {
