@@ -36,7 +36,7 @@ function WeatherInfo(props: WeatherInfoProps) {
         <div className="weather-card">
           <img
             className="weather-background"
-            src="../../images/placeholder.jpg"
+            src="../client/images/placeholder.jpg"
             alt="background"
           />
 
