@@ -5,6 +5,7 @@ function Nav() {
     <>
       <div className='nav-list-container'>
         <div className="nav-list">
+          <NavLink to="/">Home</NavLink>
           <NavLink to="/activities">Activities</NavLink>
           <NavLink to="/events">Events</NavLink>
           <NavLink to="/clothing">Clothing</NavLink>
