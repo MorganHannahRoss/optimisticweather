@@ -11,6 +11,7 @@ function WeatherInfo(props: WeatherInfoProps) {
   const { location } = props
 
   const { isPending, isError, data, refetch } = useQuery({
+    
     queryKey: ['weather', location.lat, location.lon],
     queryFn: () => {
       return getWeather(location.lat, location.lon)

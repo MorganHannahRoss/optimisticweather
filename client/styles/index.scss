@@ -101,11 +101,6 @@ p{
   padding-left: 8rem;
 }
 
-/* WEATHER CARD */
-
-
-
-
 .header-wrapper {
   display: grid;
   padding: 5px;
@@ -212,12 +207,66 @@ p{
   font-size: 18px;
 }
 
+.activity-card-wrapper {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+}
+.activity-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 12px 15px #00000033;
+  width: 60%; 
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #ffffffca;
+}
 
+.activity-info {
+  flex: 1;
+}
 
+.activity-header {
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
 
+.activity-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 35px;
+  text-align: left;
+}
 
+.activity-tags {
+  display: flex;
+  gap: 10px;
+}
 
+.activity-tag {
+  padding: 5px;
+  background-color: #f2f2f2; 
+  border-radius: 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
 
+.activity-tag:hover {
+  background-color: rgb(56, 111, 223);
+  color: #fff;
+}
+
+.activity-description {
+  flex-basis: 50%; 
+  padding-left: 20px; 
+  border-left: 1px solid #eee;
+  font-size: 18px;
+}
 
 .filter-container {
   display: flex;
