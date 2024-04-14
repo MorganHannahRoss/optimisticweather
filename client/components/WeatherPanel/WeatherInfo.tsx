@@ -1,22 +1,27 @@
 import { Location } from '../../../models/locations'
-import { useEffect } from 'react'
-import useWeather from '../../hooks/useWeather.ts'
+import { createContext, useEffect } from 'react'
+import useWeather from '../../hooks/useWeather'
 import LocationDetails from './LocationDetails'
 import DayOfWeek from './DayOfWeek'
 
 interface WeatherInfoProps {
   location: Location
+  setWeatherType: (weather: string) => void
 }
 
 function WeatherInfo(props: WeatherInfoProps) {
-  const { location } = props
+  const { location, setWeatherType } = props
   const { isPending, isError, data, refetch } = useWeather(location)
 
   useEffect(() => {
     refetch()
   }, [location.lat, location.lon])
 
-  console.log(data)
+  useEffect(() => {
+    if (data?.current.summary) {
+      setWeatherType(data.current.summary)
+    }
+  }, [data?.current.summary])
 
   if (isError) {
     return <p>Something went wrong</p>

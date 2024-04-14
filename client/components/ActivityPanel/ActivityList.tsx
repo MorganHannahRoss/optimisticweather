@@ -3,17 +3,12 @@ import { useActivities } from '../../hooks/useActivities.ts'
 import WeatherFilter from './WeatherFilter.tsx'
 import React, { useState } from 'react'
 import TypeFilter from './TypeFilter.tsx'
+import { useWeatherTypes } from '../App.tsx'
 
 function ActivityList() {
   const { data, isPending, isError, error } = useActivities()
-  const [selectedWeather, setSelectedWeather] = useState('')
+  const [selectedWeather, setSelectedWeather] = useWeatherTypes()
   const [selectedType, setSelectedType] = useState('')
-
-  const handleWeatherChange: React.ChangeEventHandler<HTMLSelectElement> = (
-    e,
-  ) => {
-    setSelectedWeather(e.target.value)
-  }
 
   const handleTypeChange: React.ChangeEventHandler<HTMLSelectElement> = (e) => {
     setSelectedType(e.target.value)
@@ -36,7 +31,7 @@ function ActivityList() {
       <div className="activity-card-wrapper">
         <h3>Activities</h3>
         <div className="filter-container">
-          <WeatherFilter onChange={handleWeatherChange} />
+          <WeatherFilter />
           <TypeFilter onChange={handleTypeChange} />
         </div>
         {filteredActivities?.map((item) => (
