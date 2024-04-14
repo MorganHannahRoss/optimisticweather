@@ -13,8 +13,12 @@ function EventList() {
   if (isPending) {
     return <div className="loader"></div>
   }
-  console.log(data)
-  return <h1>Hii</h1>
+  console.log(data.events[0])
+  return (
+    <>
+      <h1>{data.events[0].name}</h1>
+    </>
+  )
 }
 
 export default EventList
