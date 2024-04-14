@@ -1,6 +1,8 @@
 import { Location } from '../../../models/locations'
 import { useEffect } from 'react'
 import useWeather from '../../hooks/useWeather.ts'
+import LocationDetails from './LocationDetails'
+import DayOfWeek from './DayOfWeek'
 
 interface WeatherInfoProps {
   location: Location
@@ -8,7 +10,6 @@ interface WeatherInfoProps {
 
 function WeatherInfo(props: WeatherInfoProps) {
   const { location } = props
-
   const { isPending, isError, data, refetch } = useWeather(location)
 
   useEffect(() => {
@@ -37,6 +38,9 @@ function WeatherInfo(props: WeatherInfoProps) {
           />
 
           <div className="weather-info-container">
+            <div className="summary-text">
+              <LocationDetails />
+            </div>
             <p className="temperature-text">{data.current.temperature}°C</p>
             <div className="weather-icon-container">
               <p className="summary-text">{data.current.summary}</p>
@@ -46,9 +50,13 @@ function WeatherInfo(props: WeatherInfoProps) {
                 alt={data.current.icon}
               />
             </div>
-            {dailyData.map((day) => (
-              <div key={day.day} className="weekly-weather-container">
-                <p>{day.day}</p>
+            {dailyData.map((day, index) => (
+              <div key={index} className="weekly-weather-container">
+                <p>
+                  {new Date(day.day).toLocaleDateString('en-US', {
+                    weekday: 'long',
+                  })}
+                </p>
                 <div className="weekly-info-container">
                   <p>{day.all_day.temperature}°C</p>
                   <img
