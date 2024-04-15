@@ -14,7 +14,6 @@ function LocationDetails() {
     return <p>...Loading</p>
   }
 
-  console.log(data.adm_area1)
   return (
     <div>
       <p>{data.adm_area1}</p>

@@ -18,17 +18,6 @@ function WeatherFilter() {
     { label: 'Snow', value: 'snow' },
   ]
 
-  // useEffect(() => {
-  //   if (
-  //     selectedWeather &&
-  //     typeof selectedWeather === 'string' &&
-  //     selectedWeather.includes('sunny') &&
-  //     selectedWeather !== 'sunny'
-  //   ) {
-  //     setSelectedWeather('sunny')
-  //   }
-  // }, [selectedWeather])
-
   useEffect(() => {
     if (selectedWeather && typeof selectedWeather === 'string') {
       const lowercaseWeather = selectedWeather.toLowerCase()
