@@ -34,7 +34,7 @@ function ActivityList() {
   return (
     <>
       <div className="activity-card-wrapper">
-        <h3>Activities</h3>
+        <h2>Activities</h2>
         <div className="filter-container">
           <WeatherFilter onChange={handleWeatherChange} />
           <TypeFilter onChange={handleTypeChange} />

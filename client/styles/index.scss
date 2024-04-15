@@ -146,6 +146,17 @@ p{
   }
 }
 
+.home-card {
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 12px 15px #00000033;
+  width: 60%; 
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #ffffffca;
+}
+
 .activity-card-wrapper {
   padding-top: 1rem;
   display: flex;
