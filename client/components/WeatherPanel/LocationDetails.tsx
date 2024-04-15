@@ -1,33 +1,13 @@
-import { useQuery } from '@tanstack/react-query'
-import { getLocation } from '../../apis/apiClient'
+interface LocationDetailsProps {
+  location: Location
+}
 
-function LocationDetails() {
-  const { isPending, isError, data } = useQuery({
-    queryKey: ['location'],
-    queryFn: () => getLocation(),
-  })
-  if (isError) {
-    return <p>Something went wrong</p>
+function LocationDetails({ location }: LocationDetailsProps) {
+  if (!location) {
+    return <p>Loading....</p>
   }
 
-  if (isPending) {
-    return <p>...Loading</p>
-  }
-
-  return (
-    <div>
-      <p>{data.adm_area1}</p>
-      {/* <h2>Location details from lat/lon</h2>
-      <p>{data.name}</p>
-      <p>{data.adm_area2}</p>
-      <p>{data.country}</p>
-      <p>{data.lat}</p>
-      <p> {data.lon}</p>
-      <p>{data.place_id}</p>
-      <p>{data.timezone}</p>
-      <p>{data.type}</p> */}
-    </div>
-  )
+  return <h2>{location.city}</h2>
 }
 
 export default LocationDetails
