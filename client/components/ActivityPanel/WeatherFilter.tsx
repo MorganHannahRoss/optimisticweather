@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useWeatherTypes } from '../App'
 
 function WeatherFilter() {
@@ -16,6 +17,43 @@ function WeatherFilter() {
     { label: 'Windy', value: 'windy' },
     { label: 'Snow', value: 'snow' },
   ]
+
+  // useEffect(() => {
+  //   if (
+  //     selectedWeather &&
+  //     typeof selectedWeather === 'string' &&
+  //     selectedWeather.includes('sunny') &&
+  //     selectedWeather !== 'sunny'
+  //   ) {
+  //     setSelectedWeather('sunny')
+  //   }
+  // }, [selectedWeather])
+
+  useEffect(() => {
+    if (selectedWeather && typeof selectedWeather === 'string') {
+      const lowercaseWeather = selectedWeather.toLowerCase()
+      const hasCloudy = lowercaseWeather.includes('cloudy')
+      const hasSunny = lowercaseWeather.includes('sunny')
+      const hasRain = lowercaseWeather.includes('rain')
+      const hasWindy = lowercaseWeather.includes('windy')
+      const hasSnow = lowercaseWeather.includes('snow')
+      const hasClear = lowercaseWeather.includes('clear')
+
+      if (hasCloudy && selectedWeather !== 'cloudy') {
+        setSelectedWeather('cloudy')
+      } else if (hasSunny && selectedWeather !== 'sunny') {
+        setSelectedWeather('sunny')
+      } else if (hasRain && selectedWeather !== 'rain') {
+        setSelectedWeather('rain')
+      } else if (hasWindy && selectedWeather !== 'windy') {
+        setSelectedWeather('rain')
+      } else if (hasSnow && selectedWeather !== 'snow') {
+        setSelectedWeather('snow')
+      } else if (hasClear && selectedWeather !== 'clear') {
+        setSelectedWeather('clear')
+      }
+    }
+  }, [selectedWeather])
 
   return (
     <div className="filter">
