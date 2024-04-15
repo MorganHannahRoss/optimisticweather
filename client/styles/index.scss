@@ -13,8 +13,10 @@ p{
   margin: 0;
 }
 
-/* WEATHER CARD */
+// LOADER
 .loader {
+  margin-top: 10rem;
+  margin-right: 1.5rem;
   width: 80px;
   height: 40px;
   border-radius: 100px 100px 0 0;
@@ -39,6 +41,17 @@ p{
   80%,100% {transform: rotate(1turn)}
 }
 
+// ERROR
+.error-message {
+  margin-top: 10rem;
+  margin-right: 1.5rem;
+  text-align: left;
+}
+.no-weather-img {
+  max-width: 10rem;
+}
+
+/* WEATHER CARD */
 .weather-card-wrapper {
   position: relative;
   padding-top: 1rem;
@@ -155,6 +168,9 @@ p{
   padding: 20px;
   border-radius: 15px;
   background-color: #ffffffca;
+  > p {
+    padding: 0.5rem 0rem;
+  }
 }
 
 .activity-card-wrapper {
