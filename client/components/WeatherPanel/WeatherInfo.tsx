@@ -43,7 +43,7 @@ function WeatherInfo(props: WeatherInfoProps) {
 
           <div className="weather-info-container">
             <div className="summary-text">
-              <LocationDetails />
+              <LocationDetails location={location} />
             </div>
             <p className="temperature-text">{data.current.temperature}°C</p>
             <div className="weather-icon-container">
