@@ -19,26 +19,29 @@ function App() {
 
     setMessage('')
 
-    setChats([...chats, { role: 'user', content: message }])
+    const allChats = [...chats, { role: 'user', content: message }]
+
+    setChats(allChats)
 
     try {
-      const response = await fetch('http://localhost:3000/', {
+      const response = await fetch('/api/v1/chatbot', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          chats,
-          currentWeather: '',
-          currentLocation: '',
+          chats: allChats,
+          currentWeather: 'Sunny',
+          currentLocation: 'Auckland',
         }),
         //above for personalised message responses -> currentWeather: '', currentLocation: ''
       })
 
       const data: ChatResponse = await response.json()
-      const chatResponse = { role: 'assistant', content: data.output }
+      const chatResponse = data.output
 
-      setChats([...chats, chatResponse])
+      setChats([...allChats, chatResponse])
+      console.log([...allChats, chatResponse])
       setIsTyping(false)
     } catch (error) {
       console.error('Error:', error)
@@ -65,7 +68,7 @@ function App() {
 
       <div className={isTyping ? '' : 'hide'}>
         <p>
-          <i>{isTyping ? 'Typing' : ''}</i>
+          <i>{isTyping ? 'Chatbot Typing...' : ''}</i>
         </p>
       </div>
 
@@ -83,3 +86,4 @@ function App() {
 }
 
 export default App
+

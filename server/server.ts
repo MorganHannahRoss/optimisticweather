@@ -3,6 +3,8 @@ import * as Path from 'node:path'
 import weatherRoutes from './routes/weather'
 import activityRoutes from './routes/activities.ts'
 import locationsRoutes from './routes/locations.ts'
+import chatbotRoutes from './routes/chatbot.ts'
+
 const server = express()
 
 server.use(express.json())
@@ -10,6 +12,7 @@ server.use(express.json())
 server.use('/api/v1/weather', weatherRoutes)
 server.use('/api/v1/activities', activityRoutes)
 server.use('/api/v1/locations', locationsRoutes)
+server.use('/api/v1/chatbot', chatbotRoutes)
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))

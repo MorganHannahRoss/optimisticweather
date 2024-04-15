@@ -1,3 +1,7 @@
 export default interface ChatResponse {
-  output: string
+  role: any
+  output: {
+    role: string
+    content: string
+  }
 }
