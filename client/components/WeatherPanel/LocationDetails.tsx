@@ -1,8 +1,6 @@
-interface LocationDetailsProps {
-  location: Location
-}
+import { Location } from "../../../models/locations"
 
-function LocationDetails({ location }: LocationDetailsProps) {
+function LocationDetails({ location }:{ location: Location }) {
   if (!location) {
     return <p>Loading....</p>
   }

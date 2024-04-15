@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react'
+import React, { ReactNode, createContext, useContext, useState } from 'react'
 
 interface WeatherSummaryContextType {
   summary: string
@@ -9,7 +9,7 @@ const WeatherSummaryContext = createContext<
   WeatherSummaryContextType | undefined
 >(undefined)
 
-export const WeatherSummaryProvider: React.FC = ({ children }) => {
+export const WeatherSummaryProvider = ({ children }:{ children: ReactNode }) => {
   const [summary, setSummary] = useState('')
 
   return (
