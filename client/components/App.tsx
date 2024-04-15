@@ -2,7 +2,7 @@ import { Outlet, useOutletContext } from 'react-router-dom'
 import Nav from './Nav/Nav.tsx'
 import Header from './Header/Header.tsx'
 import WeatherInfo from './WeatherPanel/WeatherInfo.tsx'
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import { Location } from '../../models/locations.ts'
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     lon: '174.74',
   })
 
-  const [weatherType, setWeatherType] = useState(null as null | string)
+  const [weatherType, setWeatherType] = useState<null | string>(null)
 
   return (
     <>
@@ -23,7 +23,7 @@ function App() {
         <div className="content-wrapper">
           <Nav />
           <div className="outlet-container">
-            <Outlet context={[weatherType, setWeatherType]} />
+            <Outlet context={{weatherType, setWeatherType, location, setLocation}} />
           </div>
           <WeatherInfo setWeatherType={setWeatherType} location={location} />
         </div>
@@ -33,7 +33,12 @@ function App() {
 }
 
 export function useWeatherTypes() {
-  return useOutletContext() as [string, (weatherType: string) => void]
+  return useOutletContext<{
+    weatherType: null | string;
+    setWeatherType: Dispatch<SetStateAction<null | string>>;
+    location: Location;
+    setLocation: Dispatch<SetStateAction<Location>>
+  }>()
 }
 
 export default App

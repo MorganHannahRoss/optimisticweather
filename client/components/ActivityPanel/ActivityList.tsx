@@ -7,7 +7,7 @@ import { useWeatherTypes } from '../App.tsx'
 
 function ActivityList() {
   const { data, isPending, isError, error } = useActivities()
-  const [selectedWeather, setSelectedWeather] = useWeatherTypes()
+  const {weatherType, setWeatherType} = useWeatherTypes()
   const [selectedType, setSelectedType] = useState('')
 
   const handleTypeChange: React.ChangeEventHandler<HTMLSelectElement> = (e) => {
@@ -16,7 +16,7 @@ function ActivityList() {
 
   const filteredActivities = data?.filter(
     (activity) =>
-      (selectedWeather ? activity.weather === selectedWeather : true) &&
+      (weatherType ? activity.weather === weatherType : true) &&
       (selectedType ? activity.type === selectedType : true),
   )
 
