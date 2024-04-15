@@ -16,8 +16,6 @@ function App() {
 
   const [weatherType, setWeatherType] = useState(null as null | string)
 
-  console.log()
-
   return (
     <>
       <div className="app">

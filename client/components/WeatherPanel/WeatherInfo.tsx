@@ -1,6 +1,8 @@
 import { Location } from '../../../models/locations'
 import { createContext, useEffect } from 'react'
 import useWeather from '../../hooks/UseWeather'
+import { createContext, useEffect } from 'react'
+import useWeather from '../../hooks/UseWeather'
 import LocationDetails from './LocationDetails'
 import DayOfWeek from './DayOfWeek'
 
@@ -23,8 +25,14 @@ function WeatherInfo(props: WeatherInfoProps) {
     }
   }, [data?.current.summary])
 
+  const WeatherContext = createContext(data?.current.temperature)
+
   if (isError) {
-    return <p>Something went wrong</p>
+    return (
+      <div>
+        <p>unable to load weather</p>
+      </div>
+    )
   }
 
   if (isPending) {
