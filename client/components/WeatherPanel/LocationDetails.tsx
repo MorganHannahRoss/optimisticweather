@@ -4,7 +4,7 @@ interface LocationDetailsProps {
 
 function LocationDetails({ location }: LocationDetailsProps) {
   if (!location) {
-    return <p>Loading...</p>
+    return <p>Loading....</p>
   }
 
   return <h2>{location.city}</h2>
