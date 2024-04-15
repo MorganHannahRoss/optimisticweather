@@ -19,7 +19,11 @@ function WeatherInfo(props: WeatherInfoProps) {
   const WeatherContext = createContext(data?.current.temperature)
 
   if (isError) {
-    return <p>Something went wrong</p>
+    return (
+      <div>
+        <p>unable to load weather</p>
+      </div>
+    )
   }
 
   if (isPending) {
