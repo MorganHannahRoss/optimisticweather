@@ -1,8 +1,6 @@
 import { Location } from '../../../models/locations'
 import { createContext, useEffect } from 'react'
 import useWeather from '../../hooks/UseWeather'
-import { createContext, useEffect } from 'react'
-import useWeather from '../../hooks/UseWeather'
 import LocationDetails from './LocationDetails'
 import DayOfWeek from './DayOfWeek'
 
