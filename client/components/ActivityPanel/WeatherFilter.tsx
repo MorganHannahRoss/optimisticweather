@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useWeatherTypes } from '../App'
 
 function WeatherFilter() {
-  const {weatherType, setWeatherType} = useWeatherTypes()
+  const { weatherType, setWeatherType } = useWeatherTypes()
 
   const onChange: React.ChangeEventHandler<HTMLSelectElement> = (e) => {
     setWeatherType(e.target.value)
@@ -27,15 +27,19 @@ function WeatherFilter() {
       const hasWindy = lowercaseWeather.includes('windy')
       const hasSnow = lowercaseWeather.includes('snow')
       const hasClear = lowercaseWeather.includes('clear')
+      const hasOvercast = lowercaseWeather.includes('overcast')
+      const hasThunderstorm = lowercaseWeather.includes('thunderstorm')
 
-      if (hasCloudy && weatherType !== 'cloudy') {
+      if (hasRain && hasSnow) {
+        setWeatherType('rain')
+      } else if ((hasCloudy || hasOvercast) && weatherType !== 'cloudy') {
         setWeatherType('cloudy')
       } else if (hasSunny && weatherType !== 'sunny') {
         setWeatherType('sunny')
-      } else if (hasRain && weatherType !== 'rain') {
+      } else if ((hasRain || hasThunderstorm) && weatherType !== 'rain') {
         setWeatherType('rain')
       } else if (hasWindy && weatherType !== 'windy') {
-        setWeatherType('rain')
+        setWeatherType('windy')
       } else if (hasSnow && weatherType !== 'snow') {
         setWeatherType('snow')
       } else if (hasClear && weatherType !== 'clear') {
