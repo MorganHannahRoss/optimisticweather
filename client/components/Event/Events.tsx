@@ -5,7 +5,7 @@ import { useWeatherTypes } from '../App.tsx'
 import { useEffect } from 'react'
 
 function Events() {
-  const { location, setLocation } = useWeatherTypes()
+  const { location } = useWeatherTypes()
   const { isPending, isError, data, refetch } = useQuery({
     queryKey: ['event'],
     queryFn: () => getEvent(location.lat, location.lon),

@@ -1,11 +1,10 @@
 import { Location } from '../../../models/locations'
-import { createContext, useEffect } from 'react'
+import { useEffect } from 'react'
 import useWeather from '../../hooks/UseWeather'
 import LocationDetails from './LocationDetails'
-import DayOfWeek from './DayOfWeek'
 
 interface WeatherInfoProps {
-  location: Location
+  location: Location;
   setWeatherType: (weather: string) => void
 }
 
@@ -22,8 +21,6 @@ function WeatherInfo(props: WeatherInfoProps) {
       setWeatherType(data.current.summary)
     }
   }, [data?.current.summary])
-
-  const WeatherContext = createContext(data?.current.temperature)
 
   if (isError) {
     return (

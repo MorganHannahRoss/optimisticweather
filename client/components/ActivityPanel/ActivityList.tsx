@@ -7,7 +7,7 @@ import { useWeatherTypes } from '../App.tsx'
 
 function ActivityList() {
   const { data, isPending, isError, error } = useActivities()
-  const {weatherType, setWeatherType} = useWeatherTypes()
+  const { weatherType } = useWeatherTypes()
   const [selectedType, setSelectedType] = useState('')
 
   const handleTypeChange: React.ChangeEventHandler<HTMLSelectElement> = (e) => {
