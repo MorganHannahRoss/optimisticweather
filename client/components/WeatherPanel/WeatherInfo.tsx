@@ -1,14 +1,15 @@
 import { Location } from '../../../models/locations'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import useWeather from '../../hooks/UseWeather'
 import LocationDetails from './LocationDetails'
 
 interface WeatherInfoProps {
-  location: Location;
+  location: Location
   setWeatherType: (weather: string) => void
 }
 
 function WeatherInfo(props: WeatherInfoProps) {
+  const [weatherBackground, setWeatherBackground] = useState('Sun')
   const { location, setWeatherType } = props
   const { isPending, isError, data, refetch } = useWeather(location)
 
@@ -21,6 +22,21 @@ function WeatherInfo(props: WeatherInfoProps) {
       setWeatherType(data.current.summary)
     }
   }, [data?.current.summary])
+
+  // To change background
+  useEffect(() => {
+    const time = new Date()
+    const currentTime = time.getHours()
+    if (currentTime >= 6 && currentTime < 8) {
+      setWeatherBackground('sunrise')
+    } else if (currentTime >= 8 && currentTime < 16) {
+      setWeatherBackground('Sun')
+    } else if (currentTime >= 17 && currentTime < 20) {
+      setWeatherBackground('sunrise')
+    } else {
+      setWeatherBackground('Moon')
+    }
+  }, [])
 
   if (isError) {
     return (
@@ -43,13 +59,12 @@ function WeatherInfo(props: WeatherInfoProps) {
   return (
     <>
       <div className="weather-card-wrapper">
-        <div className="weather-card">
-          <img
-            className="weather-background"
-            src="../client/images/placeholder.jpg"
-            alt="background"
-          />
-
+        <div
+          className="weather-card"
+          style={{
+            background: `url(../client/images/${weatherBackground}.png) no-repeat center center/cover`,
+          }}
+        >
           <div className="weather-info-container">
             <div className="summary-text">
               <LocationDetails location={location} />
