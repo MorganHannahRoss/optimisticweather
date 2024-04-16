@@ -6,7 +6,7 @@ body {
   margin: 0;
   background-color: rgb(187, 205, 230);
   // placeholder
-  background-image: url('../images/sky-with-clouds.jpg');
+  // background-image: url('../images/sky-with-clouds.jpg');
 }
 
 p, a, span, div{
@@ -134,6 +134,7 @@ p, a, span, div{
   column-gap: 10px;
   text-align: center;
 }
+
 .nav-list-container {
   background-image: linear-gradient(
     rgba(255, 255, 255, 0.8),
@@ -142,11 +143,10 @@ p, a, span, div{
   );
   padding-top: 1rem;
   height: 100vh;
-  max-width: 10rem;
+  width: 10rem;
   > .nav-list {
     display: grid;
     text-align: start;
-    max-height: 20px;
     > a.active {
       font-weight: bold;
       background-color: rgba(88, 88, 88, 0.1);
