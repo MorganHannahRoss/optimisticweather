@@ -53,10 +53,13 @@ function AIPopup() {
   }
 
   return (
-    <main>
-      <h2>Chat AI </h2>
+    <main className="chatbot-main">
+      <h2>Weather AI </h2>
+      <p>
+        Get answers to your questions based on weather in your selected location
+      </p>
 
-      <section>
+      <section className="chatbot-section">
         {chats && chats.length
           ? chats.map((chat, index) => (
               <p key={index} className={chat.role === 'user' ? 'user_msg' : ''}>
@@ -71,7 +74,7 @@ function AIPopup() {
       </section>
 
       <div className={isTyping ? '' : 'hide'}>
-        <p>
+        <p className="isTyping">
           <i>{isTyping ? 'Chatbot Typing...' : ''}</i>
         </p>
       </div>
