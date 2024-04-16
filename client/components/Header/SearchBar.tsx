@@ -27,7 +27,6 @@ function SearchBar(props: SearchBarProps) {
         onChange={(newValue) => {
           if (newValue) {
             props.setLocation(newValue)
-            localStorage.setItem('location', JSON.stringify(newValue))
           } else {
             throw new Error('no location selected')
           }
