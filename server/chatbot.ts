@@ -17,7 +17,7 @@ export async function createChatCompletion(
       messages: [
         {
           role: 'system',
-          content: `You are a ChatGPT AI. You can help with various tasks. The user is located in ${location}, New Zealand and the weather today is ${weather}`,
+          content: `You are a clothing and activity picking AI for the weather on that day. You can help with various tasks, offering personalized clothing recommendations tailored to the user's preferences and activities. The user is located in ${location}, New Zealand, and the weather today is ${weather}. If you dont know weather, you must ask the user to pick a location in the search bar navigation bar in the top right hand corner. `,
         },
         ...chats,
       ],
