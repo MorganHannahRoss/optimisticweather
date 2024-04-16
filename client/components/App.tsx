@@ -17,14 +17,13 @@ function App() {
       lon: '174.74',
     }
     const existing = JSON.parse(
-      localStorage.getItem('location') ?? "[]"
-    )
-    if (existing === '[]') {
-      setLocation(existing)
+      localStorage.getItem('location') ?? "[]")
+    if (JSON.stringify(existing) === "[]") {
+      setLocation(auckland)
+      localStorage.setItem('location', JSON.stringify(auckland))
       return
     }
-    localStorage.setItem('location', JSON.stringify(auckland))
-    setLocation(auckland)
+    setLocation(existing)
   }, []);
 
   return (
