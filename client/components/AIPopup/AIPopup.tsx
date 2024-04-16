@@ -45,7 +45,6 @@ function AIPopup() {
       const chatResponse = data.output
 
       setChats([...allChats, chatResponse])
-      console.log([...allChats, chatResponse])
       setIsTyping(false)
     } catch (error) {
       console.error('Error:', error)

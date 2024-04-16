@@ -8,8 +8,6 @@ function Nav() {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/activities">Activities</NavLink>
           <NavLink to="/events">Events</NavLink>
-          <NavLink to="/clothing">Clothing</NavLink>
-          {/* temp link for popup */}
           <NavLink to="/ai">AI</NavLink>
         </div>
       </div>

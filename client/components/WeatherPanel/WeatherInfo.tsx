@@ -89,7 +89,7 @@ function WeatherInfo(props: WeatherInfoProps) {
                   <p>{day.all_day.temperature}°C</p>
                   <img
                     className="weather-icon"
-                    src={`../../icons/small/${day.icon}.png`} // this needs fixing
+                    src={`../../icons/small/${day.icon}.png`}
                     alt={data.current.icon}
                   />
                 </div>

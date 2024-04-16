@@ -5,26 +5,23 @@ import WeatherInfo from './WeatherPanel/WeatherInfo.tsx'
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import { Location } from '../../models/locations.ts'
 
+const auckland = {
+  id: 1,
+  city: 'Auckland',
+  lat: '-36.8406',
+  lon: '174.74',
+}
+
 function App() {
-  const [location, setLocation] = useState<Location>("[]" as unknown as Location)
+  const cached = localStorage.getItem('location');
+  const parsed = cached !== null ? JSON.parse(cached) : auckland;
+
+  const [location, setLocation] = useState<Location>(parsed)
   const [weatherType, setWeatherType] = useState<null | string>(null)
 
   useEffect(() => {
-    const auckland = {
-      id: 1,
-      city: 'Auckland',
-      lat: '-36.8406',
-      lon: '174.74',
-    }
-    const existing = JSON.parse(
-      localStorage.getItem('location') ?? "[]")
-    if (JSON.stringify(existing) === "[]") {
-      setLocation(auckland)
-      localStorage.setItem('location', JSON.stringify(auckland))
-      return
-    }
-    setLocation(existing)
-  }, []);
+    localStorage.setItem('location', JSON.stringify(location));
+  }, [location]);
 
   return (
     <>
@@ -33,7 +30,9 @@ function App() {
         <div className="content-wrapper">
           <Nav />
           <div className="outlet-container">
-            <Outlet context={{weatherType, setWeatherType, location, setLocation}} />
+            <Outlet
+              context={{ weatherType, setWeatherType, location, setLocation }}
+            />
           </div>
           <WeatherInfo setWeatherType={setWeatherType} location={location} />
         </div>
@@ -44,9 +43,9 @@ function App() {
 
 export function useWeatherTypes() {
   return useOutletContext<{
-    weatherType: null | string;
-    setWeatherType: Dispatch<SetStateAction<null | string>>;
-    location: Location;
+    weatherType: null | string
+    setWeatherType: Dispatch<SetStateAction<null | string>>
+    location: Location
     setLocation: Dispatch<SetStateAction<Location>>
   }>()
 }

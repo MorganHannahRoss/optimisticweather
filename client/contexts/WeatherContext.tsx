@@ -25,10 +25,6 @@ export const WeatherSummaryProvider = ({
 
 export function useWeatherSummary() {
   const context = useContext(WeatherSummaryContext)
-  // if (!context) {
-  //   throw new Error('Not found')
-  // }
-  // removing this error message because the AI wont work with it on with no location selected
 
   return context
 }
