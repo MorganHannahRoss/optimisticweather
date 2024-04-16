@@ -20,12 +20,14 @@ function SearchBar(props: SearchBarProps) {
   return (
     <>
       <Select
+        value={props.location}
         options={data}
         getOptionLabel={(location) => location.city}
         getOptionValue={(location) => location.id.toString()}
         onChange={(newValue) => {
           if (newValue) {
             props.setLocation(newValue)
+            localStorage.setItem('location', JSON.stringify(newValue))
           } else {
             throw new Error('no location selected')
           }

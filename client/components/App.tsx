@@ -2,19 +2,29 @@ import { Outlet, useOutletContext } from 'react-router-dom'
 import Nav from './Nav/Nav.tsx'
 import Header from './Header/Header.tsx'
 import WeatherInfo from './WeatherPanel/WeatherInfo.tsx'
-import { Dispatch, SetStateAction, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import { Location } from '../../models/locations.ts'
 
 function App() {
-  //prop drill
-  const [location, setLocation] = useState<Location>({
-    id: 1,
-    city: 'Auckland',
-    lat: '-36.8406',
-    lon: '174.74',
-  })
-
+  const [location, setLocation] = useState<Location>("[]" as unknown as Location)
   const [weatherType, setWeatherType] = useState<null | string>(null)
+
+  useEffect(() => {
+    const auckland = {
+      id: 1,
+      city: 'Auckland',
+      lat: '-36.8406',
+      lon: '174.74',
+    }
+    const existing = JSON.parse(
+      localStorage.getItem('location') ?? "[]")
+    if (JSON.stringify(existing) === "[]") {
+      setLocation(auckland)
+      localStorage.setItem('location', JSON.stringify(auckland))
+      return
+    }
+    setLocation(existing)
+  }, []);
 
   return (
     <>
