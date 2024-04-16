@@ -6,14 +6,14 @@ body {
   margin: 0;
   background-color: rgb(187, 205, 230);
   // placeholder
-  background-image: url('../images/sky-with-clouds.jpg');
+  // background-image: url('../images/sky-with-clouds.jpg');
 }
 
-p{
+p, a, span, div{
   margin: 0;
 }
 
-// LOADER
+/* -------------------------WEATHER CARD LOADER-------------------------------------*/
 .loader {
   margin-top: 10rem;
   margin-right: 1.5rem;
@@ -51,7 +51,7 @@ p{
   max-width: 10rem;
 }
 
-/* WEATHER CARD */
+/* -------------------------WEATHER CARD-------------------------------------*/
 .weather-card-wrapper {
   position: relative;
   padding-top: 1rem;
@@ -113,6 +113,7 @@ p{
   align-items: center;
   padding-left: 8rem;
 }
+/* -------------------------WEATHER CARD-------------------------------------*/
 
 .header-wrapper {
   display: grid;
@@ -133,6 +134,7 @@ p{
   column-gap: 10px;
   text-align: center;
 }
+
 .nav-list-container {
   background-image: linear-gradient(
     rgba(255, 255, 255, 0.8),
@@ -141,11 +143,10 @@ p{
   );
   padding-top: 1rem;
   height: 100vh;
-  max-width: 10rem;
+  width: 10rem;
   > .nav-list {
     display: grid;
     text-align: start;
-    max-height: 20px;
     > a.active {
       font-weight: bold;
       background-color: rgba(88, 88, 88, 0.1);
@@ -313,3 +314,46 @@ p{
     text-align: center;
   }
 }
+
+/* -------------------------EVENT PAGE-------------------------------------*/
+.event-img-container{
+  
+}
+.event-img{
+  max-width: 20rem;
+  padding-right: 0.5rem;
+}
+
+.title-text{
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.activity-schedule {
+  font-size: 0.8rem;
+  padding: 10px 0;
+}
+
+.viewMore-text{
+  font-size: 1rem;
+}
+/* -------------------------EVENT PAGE-------------------------------------*/
+
+
+// -------- Media Queries
+
+@media only screen and (max-width: 768px) {
+  .nav-list-container, .outlet-container, .error-message {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .activity-card {
+    flex-direction: column;
+  }
+}
+
+/* -------- Media Queries -------- */
