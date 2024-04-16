@@ -10,19 +10,21 @@ function App() {
   const [weatherType, setWeatherType] = useState<null | string>(null)
 
   useEffect(() => {
-    const existing = JSON.parse(
-      localStorage.getItem('location') ?? "[]"
-    )
-    if (existing !== '[]') {
-      setLocation(existing)
-      return
-    }
-    setLocation({
+    const auckland = {
       id: 1,
       city: 'Auckland',
       lat: '-36.8406',
       lon: '174.74',
-    })
+    }
+    const existing = JSON.parse(
+      localStorage.getItem('location') ?? "[]"
+    )
+    if (existing === '[]') {
+      setLocation(existing)
+      return
+    }
+    localStorage.setItem('location', JSON.stringify(auckland))
+    setLocation(auckland)
   }, []);
 
   return (
