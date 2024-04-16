@@ -1,5 +1,4 @@
-import { Event } from '../../../models/event'
-function SingleEvent({ name, description }): Event {
+function SingleEvent({ name, description }: {name: string; description: string}) {
   return (
     <div className="activity-card">
       <div className="activity-info">

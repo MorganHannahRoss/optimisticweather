@@ -19,7 +19,7 @@ function IconsHeader() {
   return (
     <>
       <div>
-        {data.daily.data.map((icon, index) => {
+        {data.daily.data.map((_, index) => {
           return (
             <div key={index}>
               <img
