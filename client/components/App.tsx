@@ -14,7 +14,6 @@ function App() {
     lon: '174.74',
   })
 
-
   return (
     <>
       <div className="app">

@@ -10,6 +10,7 @@ function WeatherFilter({ onChange }: Props) {
     { label: 'Rain', value: 'rain' },
     { label: 'Clear', value: 'clear' },
     { label: 'Windy', value: 'windy' },
+    { label: 'Snow', value: 'snow' },
   ]
 
   return (

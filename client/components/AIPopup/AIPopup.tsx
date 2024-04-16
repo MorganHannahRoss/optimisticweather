@@ -6,7 +6,7 @@ interface Chat {
   content: string
 }
 
-function App() {
+function AIPopup() {
   const [message, setMessage] = useState('')
   const [chats, setChats] = useState<Chat[]>([])
   const [isTyping, setIsTyping] = useState(false)
@@ -85,5 +85,4 @@ function App() {
   )
 }
 
-export default App
-
+export default AIPopup

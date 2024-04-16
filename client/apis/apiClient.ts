@@ -19,3 +19,9 @@ export const getLocations = async (): Promise<Location[]> => {
   }
   throw new Error(res.text)
 }
+
+const rootURL = '/api/v1/weather'
+export async function getLocation(): Promise<any> {
+  const response = await request.get(`${rootURL}/location`)
+  return response.body
+}
