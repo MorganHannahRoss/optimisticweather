@@ -22,16 +22,21 @@ function Events() {
   if (isPending) {
     return <div className="loader"></div>
   }
-
+  console.log(data.events[0])
   return (
     <>
       <div className="activity-card-wrapper">
         <h3>Events</h3>
+
         {data.events.map((event) => (
           <SingleEvent
             key={event.id}
             name={event.name}
+            location_summary={event.location_summary}
+            datetime_start={event.datetime_start}
+            images={event.images.images[0].original_url}
             description={event.description}
+            link={event.url}
           />
         ))}
       </div>
