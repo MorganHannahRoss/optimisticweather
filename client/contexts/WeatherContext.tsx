@@ -9,7 +9,11 @@ const WeatherSummaryContext = createContext<
   WeatherSummaryContextType | undefined
 >(undefined)
 
-export const WeatherSummaryProvider = ({ children }:{ children: ReactNode }) => {
+export const WeatherSummaryProvider = ({
+  children,
+}: {
+  children: ReactNode
+}) => {
   const [summary, setSummary] = useState('')
 
   return (
@@ -21,9 +25,6 @@ export const WeatherSummaryProvider = ({ children }:{ children: ReactNode }) => 
 
 export function useWeatherSummary() {
   const context = useContext(WeatherSummaryContext)
-  if (!context) {
-    throw new Error('Not found')
-  }
 
   return context
 }

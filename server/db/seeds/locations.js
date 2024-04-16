@@ -3,7 +3,6 @@
  * @returns { Promise<void> }
  */
 export const seed = async (knex) => {
-  // Deletes ALL existing entries
   await knex('locations').del()
   await knex('locations').insert([
     { city: 'Auckland', lat: -36.8406, lon: 174.74 },
