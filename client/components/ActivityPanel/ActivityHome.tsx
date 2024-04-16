@@ -31,7 +31,6 @@ function ActivityHome() {
           A list of event suggestions for your selected location pulled from the
           eventfinda website.
         </p>
-        {/* more info to go here when implemented */}
         </div>
         <div className="home-card">
         <h3>Clothing</h3>
