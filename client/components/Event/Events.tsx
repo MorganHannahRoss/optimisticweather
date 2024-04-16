@@ -22,7 +22,6 @@ function Events() {
   if (isPending) {
     return <div className="loader"></div>
   }
-  console.log(data.events[0])
   return (
     <>
       <div className="activity-card-wrapper">

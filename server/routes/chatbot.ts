@@ -6,7 +6,6 @@ export default router
 
 router.post('/', async (req, res) => {
   const { chats, currentLocation, currentWeather } = req.body
-  console.log(chats)
   try {
     // Call the function from your chatbot file to get the chat response
     const chatResponse = await createChatCompletion(
