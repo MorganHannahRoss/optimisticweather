@@ -12,7 +12,7 @@ router.get('/', async (req, res, next) => {
   try {
     const eventfinda = await request
       .get(
-        `https://api.eventfinda.co.nz/v2/events.json?point=${lat},${lon}&radius=5`,
+        `https://api.eventfinda.co.nz/v2/events.json?point=${lat},${lon}&radius=5&rows=20`,
       )
       .set('Authorization', 'Basic ' + btoa(username + ':' + password))
 

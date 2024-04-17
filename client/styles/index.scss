@@ -30,29 +30,31 @@ div {
   position: absolute;
   inset: 0 0 -100%;
   background:
-    radial-gradient(farthest-side, #ffd738 80%, #0000) left 70% top 20%/15px 15px,
-    radial-gradient(farthest-side, #020308 92%, #0000) left 65% bottom 19%/12px 12px,
-    radial-gradient(farthest-side, #ecfefe 92%, #0000) left 70% bottom 20%/15px 15px,
+    radial-gradient(farthest-side, #ffd738 80%, #0000) left 70% top 20%/15px
+      15px,
+    radial-gradient(farthest-side, #020308 92%, #0000) left 65% bottom 19%/12px
+      12px,
+    radial-gradient(farthest-side, #ecfefe 92%, #0000) left 70% bottom 20%/15px
+      15px,
     linear-gradient(#9eddfe 50%, #020308 0);
   background-repeat: no-repeat;
   animation: l5 2s infinite;
 }
 
 @keyframes l5 {
-
   0%,
   20% {
-    transform: rotate(0)
+    transform: rotate(0);
   }
 
   40%,
   60% {
-    transform: rotate(.5turn)
+    transform: rotate(0.5turn);
   }
 
   80%,
   100% {
-    transform: rotate(1turn)
+    transform: rotate(1turn);
   }
 }
 
@@ -68,11 +70,6 @@ div {
 }
 
 /* -------------------------WEATHER CARD-------------------------------------*/
-// .weather-card-wrapper {
-//   position: relative;
-//   padding-top: 1rem;
-//   padding-left: 10rem;
-// }
 
 .weather-card {
   display: flex;
@@ -80,8 +77,6 @@ div {
   overflow: hidden;
   position: relative;
   margin: 1rem;
-  // margin-left: auto;
-  // margin-right: auto;
   padding: 1.5rem;
   width: auto;
   height: 50rem;
@@ -94,11 +89,9 @@ div {
   padding-bottom: 3rem;
 }
 
-
 .weather-icon {
   margin-left: 1rem;
 }
-
 
 .temperature-text {
   margin-top: 4rem;
@@ -106,12 +99,10 @@ div {
   color: white;
 }
 
-
 .summary-text {
   font-size: 2rem;
   color: white;
 }
-
 
 .weekly-weather-container {
   display: flex;
@@ -137,12 +128,11 @@ div {
   background-color: rgba(255, 255, 255, 0.8);
   grid-template-columns: repeat(2, auto);
 
-  >.search-bar {
+  > .search-bar {
     justify-self: end;
     padding: 2rem;
     padding-top: 2.2rem;
     padding: 2rem 2rem;
-
   }
 }
 
@@ -206,7 +196,7 @@ div {
   border-radius: 15px;
   background-color: #ffffffca;
 
-  >p {
+  > p {
     padding: 0.5rem 0rem;
   }
 }
@@ -223,6 +213,7 @@ div {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   box-shadow: 0 12px 15px #00000033;
   width: 60%;
   width: 60%;
@@ -238,85 +229,19 @@ div {
 
 .activity-header {
   margin-bottom: 10px;
-  padding-left: 20px;
 }
 
 .activity-title {
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 35px;
-  text-align: left;
+  text-align: center;
 }
 
 .activity-tags {
   display: flex;
   gap: 10px;
-}
-
-.activity-tag {
-  padding: 5px;
-  background-color: #f2f2f2;
-  background-color: #f2f2f2;
-  border-radius: 15px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
-.activity-tag:hover {
-  background-color: rgb(56, 111, 223);
-  color: #fff;
-}
-
-.activity-description {
-  flex-basis: 50%;
-  padding-left: 20px;
-  flex-basis: 50%;
-  padding-left: 20px;
-  border-left: 1px solid #eee;
-  font-size: 18px;
-}
-
-.activity-card-wrapper {
-  padding-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-size: cover;
-}
-
-.activity-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 12px 15px #00000033;
-  width: 60%;
-  width: 60%;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 15px;
-  background-color: #ffffffca;
-}
-
-.activity-info {
-  flex: 1;
-}
-
-.activity-header {
-  margin-bottom: 10px;
-  padding-left: 20px;
-}
-
-.activity-title {
-  font-size: 25px;
-  font-weight: bold;
-  margin-bottom: 35px;
-  text-align: left;
-}
-
-.activity-tags {
-  display: flex;
-  gap: 10px;
+  justify-content: center;
 }
 
 .activity-tag {
@@ -382,7 +307,6 @@ div {
   padding: 10px 0;
 }
 
-
 .viewMore-text {
   font-size: 1rem;
 }
@@ -393,7 +317,6 @@ div {
 
 //mobile
 @media screen and (max-width: 60rem) {
-
   .activity-card-wrapper {
     .activity-description {
       display: none;
@@ -419,7 +342,6 @@ div {
     background: #2c3e50;
     color: #ecf0f1;
     padding-bottom: 0.5rem;
-
   }
 
   .header-wrapper {
@@ -429,11 +351,12 @@ div {
 
     .search-bar {
       padding: 1rem;
+      background-color: #2c3e50;
     }
   }
 
   .weather-card-wrapper {
-    order: 0
+    order: 0;
   }
 
   .outlet-container {
@@ -448,7 +371,6 @@ div {
     justify-content: center;
   }
 
-
   .nav-list-container {
     flex-direction: row;
     height: auto;
@@ -460,27 +382,22 @@ div {
       flex-direction: row;
       margin: 0.5rem;
       margin-bottom: 1rem;
-
     }
 
     .nav-list a {
-      font-size: 0.75rem
+      font-size: 0.75rem;
     }
-
-
-
-
-
   }
-
 }
-
 
 //desktop
 
-
 @media screen and (min-width: 60rem) {
-
+  .nav-list-container {
+    max-width: 8rem;
+    height: 90vh;
+    background-image: linear-gradient(#2c3e50, rgb(187, 205, 230));
+  }
   .nav-list-container,
   .outlet-container,
   .error-message {
@@ -488,12 +405,14 @@ div {
     width: 100%;
   }
 
+  .weather-card {
+    max-width: 500px;
+  }
+
   .activity-card {
     flex-direction: column;
-
   }
 }
-
 
 // ---------Chatbot styling---------
 
@@ -532,7 +451,6 @@ div {
   margin-bottom: 3rem;
   font-size: 1.3rem;
   padding: 15px;
-
 }
 
 .isTyping {
@@ -547,7 +465,7 @@ form {
   margin-top: 10px;
 }
 
-input[type="text"] {
+input[type='text'] {
   flex: 1;
   padding: 10px;
   border: 5px solid #807f7f;
