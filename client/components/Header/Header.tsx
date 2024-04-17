@@ -10,9 +10,12 @@ function Header(props: HeaderProps) {
   return (
     <>
       <div className="header-wrapper">
-        <h1>☀️ Optimistic Weather</h1>
+        <h1 className="title"> ☀️ Optimistic Weather</h1>
         <div className="search-bar">
-          <SearchBar location={props.location} setLocation={props.setLocation}/>
+          <SearchBar
+            location={props.location}
+            setLocation={props.setLocation}
+          />
         </div>
       </div>
     </>
