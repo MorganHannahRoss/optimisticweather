@@ -62,7 +62,7 @@ function WeatherInfo(props: WeatherInfoProps) {
         <div
           className="weather-card"
           style={{
-            background: `url(../client/images/${weatherBackground}.png) no-repeat center center/cover`,
+            background: `url(/${weatherBackground}.png) no-repeat center center/cover`,
           }}
         >
           <div className="weather-info-container">
