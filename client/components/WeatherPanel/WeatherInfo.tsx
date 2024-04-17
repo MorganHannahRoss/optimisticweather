@@ -31,7 +31,7 @@ function WeatherInfo(props: WeatherInfoProps) {
       setWeatherBackground('sunrise')
     } else if (currentTime >= 8 && currentTime < 16) {
       setWeatherBackground('Sun')
-    } else if (currentTime >= 17 && currentTime < 20) {
+    } else if (currentTime >= 16 && currentTime < 20) {
       setWeatherBackground('sunrise')
     } else {
       setWeatherBackground('Moon')
