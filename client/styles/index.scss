@@ -11,10 +11,6 @@ p,
 a,
 span,
 div {
-p,
-a,
-span,
-div {
   margin: 0;
 }
 
@@ -100,25 +96,25 @@ div {
   padding-bottom: 3rem;
 }
 
-.weather-icon {
+
 .weather-icon {
   margin-left: 1rem;
 }
 
-.temperature-text {
+
 .temperature-text {
   margin-top: 4rem;
   font-size: 3rem;
   color: white;
 }
 
-.summary-text {
+
 .summary-text {
   font-size: 2rem;
   color: white;
 }
 
-.weekly-weather-container {
+
 .weekly-weather-container {
   display: flex;
   justify-content: space-between;
@@ -128,7 +124,6 @@ div {
   font-size: 1.2rem;
 }
 
-.weekly-info-container {
 .weekly-info-container {
   display: flex;
   align-items: center;
@@ -190,8 +185,6 @@ div {
     color 0.3s;
 }
 
-.nav-list a:hover,
-.nav-list a:focus {
 .nav-list a:hover,
 .nav-list a:focus {
   background-color: #3498db;
@@ -380,7 +373,6 @@ div {
 }
 
 .title-text {
-.title-text {
   text-decoration: none;
 
   &:hover {
@@ -393,7 +385,7 @@ div {
   padding: 10px 0;
 }
 
-.viewMore-text {
+
 .viewMore-text {
   font-size: 1rem;
 }
