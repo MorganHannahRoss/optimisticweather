@@ -483,9 +483,12 @@ div {
     width: 100%;
   }
 
+  .weather-card {
+    max-width: 500px;
+  }
+
   .activity-card {
     flex-direction: column;
-
   }
 }
 
