@@ -162,6 +162,7 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: start;
+  // max-width: 8rem;
 }
 
 .nav-list {
@@ -363,7 +364,6 @@ div {
 }
 
 /* -------------------------EVENT PAGE-------------------------------------*/
-.event-img-container {}
 
 .event-img {
   max-width: 20rem;
@@ -481,7 +481,9 @@ div {
 
 
 @media screen and (min-width: 60rem) {
-
+  .nav-list-container {
+    max-width: 8rem;
+  }
   .nav-list-container,
   .outlet-container,
   .error-message {
