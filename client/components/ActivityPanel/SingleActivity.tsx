@@ -6,7 +6,7 @@ function SingleActivity({ activity, weather, type, details }: ActivityData) {
     <div className="activity-card">
       <div className="activity-info">
         <div className="activity-header">
-          <h5 className="activity-title"><a href={`https://www.google.com/search?q=${activity}`}>{activity}</a></h5>
+          <h5 className="activity-title"><a href={`https://www.google.com/search?q=${activity}+near+me`}>{activity}</a></h5>
           <div className="activity-tags">
             <span className="activity-tag">{weather}</span>
             <span className="activity-tag">{type}</span>
