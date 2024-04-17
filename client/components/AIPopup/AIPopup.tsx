@@ -8,7 +8,7 @@ interface Chat {
 }
 
 function AIPopup() {
-  const { location, weatherType } = useWeatherTypes()
+  const { location, weatherDetails } = useWeatherTypes()
   const [message, setMessage] = useState('')
   const [chats, setChats] = useState<Chat[]>([])
   const [isTyping, setIsTyping] = useState(false)
@@ -33,7 +33,7 @@ function AIPopup() {
         },
         body: JSON.stringify({
           chats: allChats,
-          currentWeather: weatherType || '',
+          currentWeather: weatherDetails || '',
           currentLocation: location.city || '',
         }),
         //above for personalised message responses -> currentWeather: '', currentLocation: ''

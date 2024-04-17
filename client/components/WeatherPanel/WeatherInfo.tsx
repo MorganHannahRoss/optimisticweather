@@ -1,27 +1,30 @@
 import { Location } from '../../../models/locations'
-import { useEffect, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import useWeather from '../../hooks/UseWeather'
 import LocationDetails from './LocationDetails'
+import { Weather } from '../../../models/weather'
 
 interface WeatherInfoProps {
   location: Location
   setWeatherType: (weather: string) => void
+  setWeatherDetails: Dispatch<SetStateAction<Weather | null>>
 }
 
 function WeatherInfo(props: WeatherInfoProps) {
   const [weatherBackground, setWeatherBackground] = useState('Sun')
-  const { location, setWeatherType } = props
+  const { location, setWeatherType, setWeatherDetails } = props
   const { isPending, isError, data, refetch } = useWeather(location)
 
   useEffect(() => {
     refetch()
-  }, [location.lat, location.lon])
+  }, [location.lat, location.lon, refetch])
 
   useEffect(() => {
     if (data?.current.summary) {
       setWeatherType(data.current.summary)
+      setWeatherDetails(data)
     }
-  }, [data?.current.summary])
+  }, [data, setWeatherType, setWeatherDetails])
 
   // To change background
   useEffect(() => {
