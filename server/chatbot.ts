@@ -21,11 +21,13 @@ export async function createChatCompletion(
           The weather details are below:
           ${JSON.stringify(weather, null, 4)}
 
-          If you dont know weather, you can reply with the instruction to pick a location in the search bar in the top right hand corner of the page.`,
+          If you dont know weather, you can reply with the instruction to pick a location in the search bar in the top right hand corner of the page.
+          
+          Keep responses to a short single paragraph.`,
         },
         ...chats,
       ],
-      max_tokens: 200,
+      max_tokens: 300,
     })
 
     return {
