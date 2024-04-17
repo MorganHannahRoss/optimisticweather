@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import ChatResponse from '../../../models/chats'
-import { useWeatherSummary } from '../../contexts/WeatherContext'
 import { useWeatherTypes } from '../App'
 
 interface Chat {
@@ -9,8 +8,7 @@ interface Chat {
 }
 
 function AIPopup() {
-  const weatherContext = useWeatherSummary()
-  const { location } = useWeatherTypes()
+  const { location, weatherType } = useWeatherTypes()
   const [message, setMessage] = useState('')
   const [chats, setChats] = useState<Chat[]>([])
   const [isTyping, setIsTyping] = useState(false)
@@ -35,7 +33,7 @@ function AIPopup() {
         },
         body: JSON.stringify({
           chats: allChats,
-          currentWeather: location || '',
+          currentWeather: weatherType || '',
           currentLocation: location.city || '',
         }),
         //above for personalised message responses -> currentWeather: '', currentLocation: ''
