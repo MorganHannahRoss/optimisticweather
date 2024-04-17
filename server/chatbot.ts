@@ -4,14 +4,12 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 })
 
-// define the createChatCompletion function
 export async function createChatCompletion(
   chats: OpenAI.Chat.Completions.ChatCompletionMessageParam[],
   location: string,
   weather: string,
 ) {
   try {
-    // call the API to generate chat
     const result = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo-0125',
       messages: [
@@ -24,7 +22,6 @@ export async function createChatCompletion(
       max_tokens: 200,
     })
 
-    // return the chat response
     return {
       output: result.choices[0].message,
     }

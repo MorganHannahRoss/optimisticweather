@@ -91,11 +91,6 @@ div {
   border-radius: 30px;
 }
 
-.weather-info-container {
-  position: absolute;
-  padding-top: 8rem;
-}
-
 .weather-icon-container {
   display: flex;
   justify-content: center;
@@ -388,22 +383,23 @@ div {
 //mobile
 @media screen and (max-width: 60rem) {
 
-.activity-card-wrapper{
-.activity-description {
-  display: none;
-}
-.activity-card {
-  justify-content: center;
-  padding: 2.5rem;
-}
-}
+  .activity-card-wrapper {
+    .activity-description {
+      display: none;
+    }
 
-.outlet-container {
-  .chatbot-main {
+    .activity-card {
+      justify-content: center;
+      padding: 2.5rem;
+    }
+  }
+
+  .outlet-container {
+    .chatbot-main {
       max-width: unset;
       width: unset;
+    }
   }
-}
 
   .title {
     text-align: center;
@@ -414,15 +410,17 @@ div {
     padding-bottom: 0.5rem;
 
   }
+
   .header-wrapper {
-    display:block;
+    display: block;
     padding: 0;
     width: 100%;
 
-      .search-bar {
-          padding: 1rem;
-        }
+    .search-bar {
+      padding: 1rem;
+    }
   }
+
   .weather-card-wrapper {
     order: 0
   }
@@ -454,7 +452,9 @@ div {
 
     }
 
-    .nav-list a { font-size: 0.75rem }
+    .nav-list a {
+      font-size: 0.75rem
+    }
 
 
 

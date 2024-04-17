@@ -3,13 +3,13 @@
  * @returns { Promise<void> }
  */
 export const seed = async (knex) => {
-  // Deletes ALL existing entries
   await knex('locations').del()
   await knex('locations').insert([
     { city: 'Auckland', lat: -36.8406, lon: 174.74 },
     { city: 'Christchurch', lat: -43.531, lon: 172.6365 },
     { city: 'Manukau City', lat: -37, lon: 174.885 },
     { city: 'Wellington', lat: -41.2889, lon: 174.7772 },
+    { city: 'Queenstown', lat: -44.9967778, lon: 168.6585139 },
     { city: 'Northcote', lat: -36.8019, lon: 174.7494 },
     { city: 'Hamilton', lat: -37.7833, lon: 175.2833 },
     { city: 'Tauranga', lat: -37.6833, lon: 176.1667 },
