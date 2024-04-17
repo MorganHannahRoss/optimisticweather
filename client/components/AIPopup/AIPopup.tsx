@@ -25,6 +25,14 @@ function AIPopup() {
 
     setChats(allChats)
 
+    const aiWeatherDetails = {
+      ...weatherDetails,
+      daily: weatherDetails.daily.data.map((daily) => ({
+        ...daily,
+        day: new Date(daily.day).toString(),
+      })),
+    }
+
     try {
       const response = await fetch('/api/v1/chatbot', {
         method: 'POST',
@@ -33,7 +41,7 @@ function AIPopup() {
         },
         body: JSON.stringify({
           chats: allChats,
-          currentWeather: weatherDetails || '',
+          currentWeather: aiWeatherDetails || {},
           currentLocation: location.city || '',
         }),
         //above for personalised message responses -> currentWeather: '', currentLocation: ''
